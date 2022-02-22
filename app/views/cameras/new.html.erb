@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Add your Camera</h1>
+
+  <div class="row">
+    <div class="col-6-sm">
+      <%= simple_form_for(@camera) do |f| %>
+        <%= f.label :category %>
+        <%= f.select :category, Camera::CATEGORIES, prompt: 'Select Category' %>
+        <%= f.input :make, placeholder: 'Add your cameras brand' %>
+        <%= f.input :model, placeholder: 'Add your cameras model' %>
+        <%= f.input :year, placeholder: 'Add production year' %>
+        <%= f.label :condition %>
+        <%= f.select :condition, Camera::CONDITIONS, prompt: 'Select Condition' %>
+        <%= f.input :price, placeholder: 'Add your price' %>
+        <%= f.submit "Create", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%# Camera.create!(category: "Video Camera HD", condition: "used", make: "Panasonic", model: "HVX", price: 750.00, year: 2003, user_id: user1.id) %>
