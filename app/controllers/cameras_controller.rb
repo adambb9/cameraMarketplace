@@ -1,5 +1,5 @@
 class CamerasController < ApplicationController
-  before_action :set_camera, only: [:show, :destroy]
+  before_action :set_camera, only: [:show, :edit, :update, :destroy]
 
   def index
     @cameras = Camera.all
@@ -19,6 +19,15 @@ class CamerasController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @camera.update(camera_params)
+
+    redirect_to camera_path(@camera)
   end
 
   def destroy

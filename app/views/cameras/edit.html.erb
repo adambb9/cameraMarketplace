@@ -1,0 +1,19 @@
+<div class="containerForm">
+  <h1>Edit your Camera</h1>
+
+  <div class="row">
+    <div class="col-6-sm">
+      <%= simple_form_for(@camera) do |f| %>
+        <%= f.label :category %>
+        <%= f.select :category, Camera::CATEGORIES, prompt: 'Select Category' %>
+        <%= f.input :make, placeholder: 'Add your cameras brand' %>
+        <%= f.input :model, placeholder: 'Add your cameras model' %>
+        <%= f.input :year, placeholder: 'Add production year' %>
+        <%= f.label :condition %>
+        <%= f.select :condition, Camera::CONDITIONS, prompt: 'Select Condition' %>
+        <%= f.input :price, placeholder: 'Add your price' %>
+        <%= f.submit "Edit", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
+</div>
