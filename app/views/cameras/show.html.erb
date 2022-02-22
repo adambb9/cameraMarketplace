@@ -35,6 +35,8 @@
                          </div>
                           <% end %> </div>
                         </div>
+                        <small class="text-right flex-shrink-0"><%= link_to "Edit camera", edit_camera_path(@camera), class: 'text-danger' %></small>
+                        <small class="text-right flex-shrink-0"><%= link_to  "Delete camera", camera_path(@camera), method: :delete, data: { confirm: "Are you sure?" }%></small>
                     </div>
                 </div>
             </div>
