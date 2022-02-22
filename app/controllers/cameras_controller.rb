@@ -6,7 +6,6 @@ class CamerasController < ApplicationController
   end
 
   def show
-    @camera = Camera.new
   end
 
   def new
