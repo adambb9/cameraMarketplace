@@ -2,19 +2,22 @@ class CamerasController < ApplicationController
   before_action :set_camera, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cameras = Camera.all
+    @cameras = policy_scope(Camera)
   end
 
   def show
+    authorize @camera
   end
 
   def new
     @camera = Camera.new
+    authorize @camera
   end
 
   def create
     @camera = Camera.new(camera_params)
     @camera.user = current_user
+    authorize @camera
     if @camera.save!
       redirect_to camera_path(@camera)
     else
@@ -23,15 +26,18 @@ class CamerasController < ApplicationController
   end
 
   def edit
+    authorize @camera
   end
 
   def update
+    authorize @camera
     @camera.update(camera_params)
 
     redirect_to camera_path(@camera)
   end
 
   def destroy
+    authorize @camera
     @camera.destroy
     redirect_to cameras_path
   end
