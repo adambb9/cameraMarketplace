@@ -16,12 +16,15 @@
                             </div>
                             <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><%= @booking.camera.make %></span>
                                 <h5 class="text-uppercase"><%= @booking.camera.model %></h5>
-                                <%= @booking.bid %>
-                                <div class="price d-flex flex-row align-items-center"> <span class="act-price">PRICE: <%= @booking.camera.price %> €</span> <br>
-                                    <div class="ml-2"> Condition: <%= @booking.camera.condition %> Year: <%= @booking.camera.year %> </div>
+                                <div class="price d-flex flex-column align-items-left">
+                                  <h5 class="act-price">Bid: <%= @booking.bid %> € </h5>
+                                  <h5 class="act-price"> PRICE: <%= @booking.camera.price %> €</h5>
+                                  <h5 class="ml-2"> Condition: <%= @booking.camera.condition %></h5>
+                                  <h5 class="ml-2"> Year: <%= @booking.camera.year %> </h5>
                                 </div>
                             </div>
-                            <p class="about">Shop from a wide range of cameras .....</p>
+                            <p class="about">Seller: <%= @booking.camera.user.first_name %> <%= @booking.camera.user.last_name %></p>
+                            <p class="about">Seller: <%= @booking.user.first_name %> <%=@booking.user.last_name %></p>
                             <div class="sizes mt-5">
 
                             </div>

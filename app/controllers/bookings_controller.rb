@@ -1,12 +1,14 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: :destroy
+  before_action :set_booking, only: [:show, :destroy]
   before_action :set_camera, only: [ :new, :create]
+  skip_after_action :verify_policy_scoped
 
   def index
     @bookings = Booking.where(user_id: current_user)
   end
 
   def show
+    @camera = Camera.find(@booking.camera.id)
     authorize @camera
   end
 
@@ -22,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.status = "Pending"
     authorize @camera
     if @booking.save!
-      redirect_to camera_path(@booking.camera)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
