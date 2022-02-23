@@ -4,7 +4,7 @@
         <div class="col-md-14">
 
         <div class="col-md-10">
-          <%= link_to 'Create New Booking', new_camera_booking_path(@camera), class: "btn btn-flat"%>
+          <%#= link_to 'Create New Booking', new_camera_booking_path(@camera), class: "btn btn-flat"%>
 
             <div class="card">
                 <div class="row">
@@ -30,7 +30,7 @@
                             <div class="sizes mt-5">
 
 
-                            <button class="btn btn-dark text-uppercase mr-2 px-4">BUY NOW</button>
+                            <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Bid', new_camera_booking_path(@camera)%></button>
                             <%= simple_form_for :search, url: root_path, method: :get do |f| %>
                            <div class="search-form-control form-group">
                           <input class="form-control string required" placeholder="Search for more cameras" type="text" name="search[query]" id="search_query" />
