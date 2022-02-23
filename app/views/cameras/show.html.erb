@@ -4,7 +4,7 @@
         <div class="col-md-14">
 
         <div class="col-md-10">
-          <%= link_to 'Create New Booking', new_camera_booking_path(@camera), class: "btn btn-flat"%>
+          <%#= link_to 'Create New Booking', new_camera_booking_path(@camera), class: "btn btn-flat"%>
 
             <div class="card">
                 <div class="row">
@@ -17,7 +17,7 @@
                     <div class="col-md-6">
                         <div class="product p-4">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span> </div> <i class="fa fa-shopping-cart text-muted"></i>
+                                <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span class="ml-1"><%= link_to 'Back', cameras_path, id:"show-back-link" %></span> </div> <i class="fa fa-shopping-cart text-muted"></i>
                             </div>
                             <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><%= @camera.make %></span>
                                 <h5 class="text-uppercase"><%= @camera.model %></h5>
@@ -30,7 +30,7 @@
                             <div class="sizes mt-5">
 
 
-                            <button class="btn btn-dark text-uppercase mr-2 px-4">BUY NOW</button>
+                            <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Bid', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
                             <%= simple_form_for :search, url: root_path, method: :get do |f| %>
                            <div class="search-form-control form-group">
                           <input class="form-control string required" placeholder="Search for more cameras" type="text" name="search[query]" id="search_query" />
