@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
-  before_action :set_camera, only: [ :new, :create]
+  before_action :set_booking, only: [:show, :edit, :destroy]
+  before_action :set_camera, only: [:new, :create]
   skip_after_action :verify_policy_scoped
 
   def index
@@ -28,6 +28,14 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @camera = Camera.find(@booking.camera.id)
+    authorize @camera
+  end
+
+  def update
   end
 
   #def destroy
