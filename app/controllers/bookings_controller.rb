@@ -5,8 +5,8 @@ class BookingsController < ApplicationController
 
   def index
     @send_bookings = current_user.send_bookings
-    @recived_booking = Booking.joins(:camera).where(user: current_user)
-    # @review = Review.new
+    @recieved_booking = Booking.joins(:camera).where(user: current_user)
+    # raise
   end
 
   def show
