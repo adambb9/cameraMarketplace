@@ -1,13 +1,17 @@
 <div class="container mt-2 mb-5">
     <div class="row d-flex justify-content-center">
+
+        <div class="col-md-14">
+
         <div class="col-md-10">
           <%= link_to 'Create New Booking', new_camera_booking_path(@camera), class: "btn btn-flat"%>
+
             <div class="card">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3">
-                            <div class="text-center p-4"> <img id="main-image" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="250" /> </div>
-                            <div class="thumbnail text-center"> <img onclick="change_image(this)" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="70"> <img onclick="change_image(this)" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="70"> </div>
+                            <div class="text-center p-4"> <img id="main-image" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="400" /> </div>
+                            <div class="thumbnail text-center"> <img onclick="change_image(this)" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="100"> <img onclick="change_image(this)" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="100"> </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -18,23 +22,23 @@
                             <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><%= @camera.make %></span>
                                 <h5 class="text-uppercase"><%= @camera.model %></h5>
                                 <%= @camera.category %>
-                                <div class="price d-flex flex-row align-items-center"> <span class="act-price">PRICE: <%= @camera.price %> €</span> <br>
-                                    <div class="ml-2"> Condition: <%= @camera.condition %> Year: <%= @camera.year %> </div>
+                                <div class="price d-flex flex-row align-items-center"> <span class="act-price">PRICE: <%= @camera.price %> €</span>
+                                    <div class="ml-2"> Condition: <%= @camera.condition %> — Year: <%= @camera.year %> </div>
                                 </div>
                             </div>
-                            <p class="about">Shop from a wide range of cameras .....</p>
+                            <p class="about mt-5">Shop from a wide range of cameras .....</p>
                             <div class="sizes mt-5">
 
-                            </div>
-                            <div class="cart mt-4 align-items-center"> <button class="btn btn-dark text-uppercase mr-2 px-4">BUY NOW</button>
-                            <br> <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+
+                            <button class="btn btn-dark text-uppercase mr-2 px-4">BUY NOW</button>
+                            <%= simple_form_for :search, url: root_path, method: :get do |f| %>
                            <div class="search-form-control form-group">
-                          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-                           <button name="button" type="submit" class="btn btn-ghost">
-                             <i class="fas fa-search"></i> Search for more cameras
-                      </button>
+                          <input class="form-control string required" placeholder="Search for more cameras" type="text" name="search[query]" id="search_query" />
+                           <button name="button" type="submit" class="btn btn-dark">
+                             <i class="fas fa-search"></i> </button>
                          </div>
                           <% end %> </div>
+                        </div>
                         </div>
                           <% if policy(@camera).edit? %>
                             <small class="text-right flex-shrink-0"><%= link_to "Edit camera", edit_camera_path(@camera), class: 'text-danger' %></small>
