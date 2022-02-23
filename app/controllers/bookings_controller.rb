@@ -4,7 +4,9 @@ class BookingsController < ApplicationController
   skip_after_action :verify_policy_scoped
 
   def index
-    @bookings = Booking.where(user_id: current_user)
+    @send_bookings = current_user.send_bookings
+    @recived_booking = Booking.joins(:camera).where(user: current_user)
+    # @review = Review.new
   end
 
   def show
