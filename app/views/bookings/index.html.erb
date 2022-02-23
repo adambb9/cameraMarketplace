@@ -15,6 +15,7 @@
               <div class="d-flex align-items-end justify-content-between pt-4">
                 <p>€<%= camera.bid %></p>
               </div>
+              <small class="text-right flex-shrink-0"><%= link_to "See booking", booking_path(camera) %></small>
             </div>
           </div>
         </div>
@@ -37,9 +38,11 @@
               <div class="d-flex align-items-end justify-content-between pt-4">
                 <p>€<%= camera.bid %></p>
               </div>
+              <small class="text-right flex-shrink-0"><%= link_to "See booking", booking_path(camera) %></small>
             </div>
           </div>
         </div>
+
       <% end %>
     <% end %>
   </div>
