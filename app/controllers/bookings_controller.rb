@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
     @send_bookings = current_user.send_bookings
     @recieved_booking = current_user.recieved_bookings
-    #policy_scope(Restaurant)
   end
 
   def show
