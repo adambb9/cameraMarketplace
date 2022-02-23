@@ -3,7 +3,12 @@ class BookingsController < ApplicationController
   before_action :set_camera, only: [:new, :create]
 
   def index
-    @bookings = policy_scope(Booking).where(user_id: current_user.id)
+
+    @send_bookings = current_user.send_bookings
+    @recieved_booking = Booking.joins(:camera).where(user: current_user)
+    
+
+
   end
 
   def show

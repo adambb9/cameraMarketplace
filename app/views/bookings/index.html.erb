@@ -1,23 +1,46 @@
 <div class="container mb-5">
   <div class="d-flex align-items-center justify-content-between column mb-3">
-    <h3 class="mb-0">Our Cameras</h3>
-    <%= link_to "Create a new booking", new_camera_booking_path, class: "btn btn-dark" %>
+    <h3 class="mb-0">Dashboard</h3>
 
   </div>
   <div class="row my-2">
-      <% @bookings.each do |camera| %>
+  <h3 class="mb-0">Camera Watchlist</h3>
+      <% @send_bookings.each do |camera| %>
       <div class="col-12 col-sm-4 mb-4">
         <div class="bg-white rounded shadow h-100">
           <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
             <div class="p-3 rounded-bottom d-flex flex-column">
-              <strong><%= booking.status %></strong>
-              <p><%= booking.comment %></p>
+              <strong><%= camera.status %></strong>
+              <p><%= camera.comment %></p>
               <div class="d-flex align-items-end justify-content-between pt-4">
-                <p>€<%= booking.bid %></p>
+                <p>€<%= camera.bid %></p>
               </div>
             </div>
           </div>
         </div>
       <% end %>
+  </div>
+
+  <div class="row my-2">
+  <h3 class="mb-0">Your Offers</h3>
+  <h1> <%= @recieved_bookings %> </h1>
+  <% if @recieved_booking.nil? %>
+    <h6>You currently have no interested customers</h6>
+    <% else %>
+      <% @recieved_booking.each do |camera| %>
+      <div class="col-12 col-sm-4 mb-4">
+        <div class="bg-white rounded shadow h-100">
+          <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
+            <div class="p-3 rounded-bottom d-flex flex-column">
+              <strong><%= camera.status %></strong>
+              <p><%= camera.comment %></p>
+              <div class="d-flex align-items-end justify-content-between pt-4">
+                <p>€<%= camera.bid %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
