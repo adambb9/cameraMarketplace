@@ -1,10 +1,9 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://cdn.thewirecutter.com/wp-content/media/2020/10/beginnerdslr2020-2048px-9779.jpg?auto=webp&quality=60&crop=1.91:1&width=1200);">
-  <div class="container">
+  <div class="container" id= "header_front">
     <h1>Buy and sell <strong>cameras</strong>!</h1>
     <p>Explore our range of used and new cameras</p>
-    <a class="btn btn-flat"><%= link_to "See cameras", cameras_path, id: "back-link", class: "backlink" %></a>
-    <a class="btn btn-primary"><%= link_to "Sign in", bookings_path, id: "booking-link" %></a>
-
+    <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "See cameras", cameras_path, id: "back-link", class: "backlink" %></button>
+    <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Sign in", bookings_path, id: "booking-link" %></button>
   </div>
 </div>
