@@ -1,62 +1,44 @@
 <div class="container mt-2 mb-5">
-    <div class="row d-flex justify-content-center">
-
-        <div class="col-md-14">
-
-        <div class="col-md-10">
-          <%#= link_to 'Create New Booking', new_camera_booking_path(@camera), class: "btn btn-flat"%>
-
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="images p-3">
-                          <% @camera.photos.each do |photo| %>
-                            <% if photo == @camera.photos.first %>
-                              <div class="text-center p-4">
-                                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-                              </div>
-                            <% else %>
-                              <div class="thumbnail text-center">
-                                <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill %>
-                              </div>
-                            <% end %>
-                          <% end %>
-                        </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-14">
+      <div class="col-md-10">
+        <div class="card">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="images p-3">
+                <% @camera.photos.each do |photo| %>
+                  <% if photo == @camera.photos.first %>
+                    <div class="text-center p-4">
+                      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
                     </div>
-                    <div class="col-md-6">
-                        <div class="product p-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span class="ml-1"><%= link_to 'Back', cameras_path, id:"show-back-link" %></span> </div> <i class="fa fa-shopping-cart text-muted"></i>
-                            </div>
-                            <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><%= @camera.make %></span>
-                                <h5 class="text-uppercase"><%= @camera.model %></h5>
-                                <%= @camera.category %>
-                                <div class="price d-flex flex-row align-items-center"> <span class="act-price">PRICE: <%= @camera.price %> €</span>
-                                    <div class="ml-2"> Condition: <%= @camera.condition %> — Year: <%= @camera.year %>
-
-                                </div>
-                                <div class="ml-2"> Owner: <%= @camera.user.first_name %></div>
-
-                            </div>
-                            <p class="about mt-5">Shop from a wide range of cameras .....</p>
-                            <div class="sizes mt-5">
-
-
+                  <% else %>
+                    <div class="thumbnail text-center">
+                      <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <div class="col-md-6">
+            <div class="product p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span class="ml-1"><%= link_to 'Back', cameras_path, id:"show-back-link" %></span> </div> <i class="fa fa-shopping-cart text-muted"></i>
+                      </div>
+                      <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><%= @camera.make %></span>
+                        <h5 class="text-uppercase"><%= @camera.model %></h5>
+                        <%= @camera.category %>
+                        <div class="price d-flex flex-row align-items-center"> <span class="act-price">PRICE: <%= @camera.price %> €</span>
+                          <div class="ml-2"> Condition: <%= @camera.condition %> Year: <%= @camera.year %></div>
+                          <div class="ml-2"> Owner: <%= @camera.user.first_name %></div>
+                          <div class="sizes mt-5">
                             <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Offer', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
-                            <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-                           <div class="search-form-control form-group">
-                          <input class="form-control string required" placeholder="Search for more cameras" type="text" name="search[query]" id="search_query" />
-                           <button name="button" type="submit" class="btn btn-dark">
-                             <i class="fas fa-search"></i> </button>
-                         </div>
-                          <% end %> </div>
-                        </div>
+                          </div>
                         </div>
                           <% if policy(@camera).edit? %>
-                            <small class="text-right flex-shrink-0"><%= link_to "Edit camera", edit_camera_path(@camera), class: 'text-danger' %></small>
+                            <small class="text-right flex-shrink-0"><%= link_to "Edit camera", edit_camera_path(@camera), class: "btn btn-dark"  %></small>
                           <% end %>
                           <% if policy(@camera).destroy? %>
-                            <small class="text-right flex-shrink-0"><%= link_to  "Delete camera", camera_path(@camera), method: :delete, data: { confirm: "Are you sure?" }%></small>
+                            <small class="text-right flex-shrink-0"><%= link_to  "Delete camera", camera_path(@camera), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></small>
                           <% end %>
                     </div>
                 </div>

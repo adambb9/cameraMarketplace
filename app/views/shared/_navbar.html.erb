@@ -14,14 +14,28 @@
           <li class="nav-item active">
             <%= link_to "Home", root_path, id: "home-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Dashboard", bookings_path, id: "booking-link" %>
+           <li class="nav-item">
+            <%= link_to "Cameras", cameras_path, id: "camera-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "My Area", bookings_path, id: "booking-link" %>
+          </li>
+          <div class="navbar-search">
+            <div class="row"></div>
+              <%= form_tag cameras_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Find a camera"
+                %>
+              <%= submit_tag "Go", class: "btn btn-dark" %>
+              <% end %>
+          </div>
           <li class="nav-item dropdown">
             <%= image_tag "https://avatars.githubusercontent.com/u/95916189?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Home", root_path, id: "home-link", class: "dropdown-item" %>
-              <%= link_to "Dashboard", bookings_path, id: "booking-link", class: "dropdown-item" %>
+              <%= link_to "My Area", bookings_path, id: "booking-link", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
