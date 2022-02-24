@@ -3,6 +3,20 @@
   background: none;
 }
 
+.navbar-nav {
+  justify-content: center;
+  align-items: center;
+  form {
+    display: flex;
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.navbar-search {
+  margin-right: -50px;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -14,11 +28,13 @@
 .nav-item {
   margin-left: 0.8em;
   margin-right: 0.8em;
+  padding-top: 0;
  a {
   color: grey;
   text-decoration: none;
  }
 }
+
 
 // #home-link {
 //   margin-left: 0.8em;
