@@ -29,8 +29,8 @@
                               <p class="about">Buyer: <%= @booking.user.first_name %> <%=@booking.user.last_name %></p>
                               <p class="about">Status: <%= @booking.status %></p>
                               <p class="about">Comment: <%= @booking.comment %></p>
-                              <small class="text-right flex-shrink-0"><%= link_to "Edit booking", edit_booking_path(@booking) %></small>
-                              <small class="text-right flex-shrink-0"><%= link_to  "Delete booking", booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'text-danger'%></small>
+                              <small class="text-right flex-shrink-0"><%= link_to "Edit Offer", edit_booking_path(@booking) %></small>
+                              <small class="text-right flex-shrink-0"><%= link_to  "Delete Offer", booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'text-danger'%></small>
             </div>
         </div>
     </div>
