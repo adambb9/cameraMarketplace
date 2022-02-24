@@ -3,7 +3,7 @@ class Camera < ApplicationRecord
   CONDITIONS = ["brand new", "slightly used", "used", "slight cosmetic damage", "bad cosmetic damage", "in need of repair", "non-functional" ]
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  has_one_attached :photo
+  has_many_attached :photos
 
   validates :category, :make, :model, presence: true
   validates :category, inclusion: { in: CATEGORIES }
