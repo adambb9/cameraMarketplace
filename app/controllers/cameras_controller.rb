@@ -4,6 +4,11 @@ class CamerasController < ApplicationController
 
   def index
     @cameras = policy_scope(Camera)
+    if params[:query].present?
+      @cameras = Camera.search_by_category_make_model_price_and_condition(params[:query])
+    else
+      @cameras = policy_scope(Camera)
+    end
   end
 
   def show

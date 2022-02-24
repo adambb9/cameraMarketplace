@@ -8,6 +8,18 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="navbar-search">
+      <div class="row justify-space-between"></div>
+        <%= form_tag cameras_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a camera"
+          %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
