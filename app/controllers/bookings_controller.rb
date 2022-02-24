@@ -1,11 +1,30 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:accept, :reject, :show, :edit, :update, :destroy]
   before_action :set_camera, only: [:new, :create]
 
   def index
     @bookings = policy_scope(Booking)
     @send_bookings = current_user.send_bookings
     @recieved_booking = current_user.recieved_bookings
+  end
+
+  def accept
+    authorize @booking
+    if @booking.update(status: "Accepted")
+      redirect_to booking_path(@booking)
+    else
+      render :edit
+    end
+  end
+
+  def reject
+    authorize @booking
+    if @booking.update(status: "Rejected")
+      @booking.destroy
+      redirect_to bookings_path
+    else
+      render :edit
+    end
   end
 
   def show
@@ -48,7 +67,7 @@ class BookingsController < ApplicationController
   def destroy
     authorize @booking
     @booking.destroy
-    redirect_to cameras_path
+    redirect_to bookings_path
   end
 
   private
