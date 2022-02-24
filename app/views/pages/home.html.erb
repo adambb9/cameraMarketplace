@@ -1,8 +1,10 @@
-<div class="containerHome">
-  <h1>Camera Market</h1>
-  <p>Explore our various offers!</p>
-  <%= link_to "View our Camera Selection", cameras_path, id: "back-link", class: "backlink" %>
-  <hr>
-  <%= link_to "View Dashboard", bookings_path, id: "booking-link" %>
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://cdn.thewirecutter.com/wp-content/media/2020/10/beginnerdslr2020-2048px-9779.jpg?auto=webp&quality=60&crop=1.91:1&width=1200);">
+  <div class="container">
+    <h1>Buy and sell <strong>cameras</strong>!</h1>
+    <p>Explore our range of used and new cameras</p>
+    <a class="btn btn-flat"><%= link_to "See cameras", cameras_path, id: "back-link", class: "backlink" %></a>
+    <a class="btn btn-primary"><%= link_to "Sign in", bookings_path, id: "booking-link" %></a>
+
+  </div>
 </div>
