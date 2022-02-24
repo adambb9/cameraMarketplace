@@ -50,6 +50,6 @@ class CamerasController < ApplicationController
   end
 
   def camera_params
-    params.require(:camera).permit(:category, :make, :model, :year, :condition, :price, :photo)
+    params.require(:camera).permit(:category, :make, :model, :year, :condition, :price, photos: [])
   end
 end
