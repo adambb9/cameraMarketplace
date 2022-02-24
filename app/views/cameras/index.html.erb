@@ -10,7 +10,11 @@
       <% @cameras.each do |camera| %>
       <div class="col-12 col-sm-4 mb-4">
         <div class="bg-white rounded shadow h-100">
-            <%= cl_image_tag @camera.photo.key, height: 300, width: 400, crop: :fill %>
+            <% camera.photos.each do |photo| %>
+              <% if photo == camera.photos.first %>
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+            <% end %>
             <div class="p-3 rounded-bottom d-flex flex-column">
               <strong><%= camera.make %></strong>
               <p><%= camera.model %></p>
