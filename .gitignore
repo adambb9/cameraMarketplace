@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+.env*
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -40,5 +41,7 @@ yarn-debug.log*
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
+.env*
+.env*
 .env*
 .env*
