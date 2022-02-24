@@ -10,7 +10,7 @@
       <% @cameras.each do |camera| %>
       <div class="col-12 col-sm-4 mb-4">
         <div class="bg-white rounded shadow h-100">
-          <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
+            <%= cl_image_tag @camera.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="p-3 rounded-bottom d-flex flex-column">
               <strong><%= camera.make %></strong>
               <p><%= camera.model %></p>
