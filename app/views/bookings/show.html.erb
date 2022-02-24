@@ -21,6 +21,8 @@
                                   <h5 class="act-price"> PRICE: <%= @booking.camera.price %> €</h5>
                                   <h5 class="ml-2"> Condition: <%= @booking.camera.condition %></h5>
                                   <h5 class="ml-2"> Year: <%= @booking.camera.year %> </h5>
+                                  <h5 class="userOwner"> Owner: <%= @booking.camera.user.first_name %></h5>
+
                                 </div>
                             </div>
                               <p class="about">Seller: <%= @booking.camera.user.first_name %> <%= @booking.camera.user.last_name %></p>
