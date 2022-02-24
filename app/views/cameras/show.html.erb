@@ -23,8 +23,11 @@
                                 <h5 class="text-uppercase"><%= @camera.model %></h5>
                                 <%= @camera.category %>
                                 <div class="price d-flex flex-row align-items-center"> <span class="act-price">PRICE: <%= @camera.price %> €</span>
-                                    <div class="ml-2"> Condition: <%= @camera.condition %> — Year: <%= @camera.year %> </div>
+                                    <div class="ml-2"> Condition: <%= @camera.condition %> — Year: <%= @camera.year %>
+
                                 </div>
+                                <div class="ml-2"> Owner: <%= @camera.user.first_name %></div>
+
                             </div>
                             <p class="about mt-5">Shop from a wide range of cameras .....</p>
                             <div class="sizes mt-5">
