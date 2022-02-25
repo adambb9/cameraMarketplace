@@ -1,5 +1,6 @@
 // Specific CSS for your home-page
 .banner {
+  background-image: url("images/sellcameras.jpeg");
   height: 700px;
   background-size: cover;
   background-position: center;
@@ -9,6 +10,7 @@
 
 .banner h1 {
   margin: 0;
+  text-align: center;
   color: white;
   text-shadow: 1px 1px 4px rgba(31, 31, 31, 0.2);
   font-size: 60px;
@@ -18,6 +20,7 @@
 
 .banner p {
   font-size: 30px;
+  text-align: center;
   margin-top: 100 px;
   letter-spacing: 5px;
   color: white;
@@ -31,13 +34,25 @@
   background: #ffffff;
   transition: background 0.3s ease;
   a {
-    color: grey;
+    color: rgb(99, 99, 99);
     text-decoration: none;
     letter-spacing: 3px;
    }
 }
 
 .btn-flat:hover {
-  background: #d3d1d1;
+  background: #ecbf5d;
   color: white;
+
+}
+
+#header_front {
+  height: auto;
+  margin-top: -80px;
+  width: fit-content;
+}
+
+.buttons {
+  width: auto;
+  margin-top: 100px;
 }

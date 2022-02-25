@@ -4,3 +4,8 @@
   object-fit: cover;
   object-position: center;
 }
+
+#camcards:hover {
+    transform: translate(0, -10px);
+    transition: 0.6s;
+}
