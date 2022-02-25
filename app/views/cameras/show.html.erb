@@ -11,10 +11,6 @@
                     <div class="text-center p-4">
                       <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %>
                     </div>
-                  <% else %>
-                    <div class="thumbnail text-center">
-                      <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill %>
-                    </div>
                   <% end %>
                 <% end %>
               </div>
