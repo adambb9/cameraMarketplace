@@ -2,13 +2,13 @@
   <div class="d-flex align-items-center justify-content-between column mb-3">
     <h3 class="mb-0" >Our Cameras</h3>
     <% if policy(Camera).create? %>
-      <%= link_to "Post a new camera", new_camera_path, class: "btn btn-dark"%>
+      <%= link_to "Post a new camera", new_camera_path, class: "btn btn-warning" %>
     <% end %>
 
   </div>
   <div class="row my-2">
       <% @cameras.each do |camera| %>
-      <div class="col-12 col-sm-4 mb-4">
+      <div class="col-12 col-sm-4 mb-4" id="camcards">
         <div class="bg-white rounded shadow h-100">
             <% camera.photos.each do |photo| %>
               <% if camera.photos.empty? %>

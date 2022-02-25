@@ -1,0 +1,29 @@
+.cam-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  max-width:1300px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 2px;
+  box-shadow: 0 0.5rem 1rem #5e5e5e80;
+  min-height:600px;
+}
+
+.act-price {
+  font-weight: bold;
+  font-size: larger;
+  color: dimgrey;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.infobox {
+  margin-top: 100px;
+}
+
+.moreinfo {
+  margin-top: 200px;
+}
