@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: none;
+  z-index: 1;
 }
 
 .navbar-nav {
@@ -24,7 +25,7 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
   margin-left: 2em;
-  
+
 }
 
 .nav-item {
@@ -32,15 +33,22 @@
   margin-right: 0.8em;
   padding-top: 0;
  a {
-  color: grey;
+  color: rgb(63, 60, 60);
   text-decoration: none;
  }
 }
 
-
+#loginbutt {
+  color: white;
+}
 // #home-link {
 //   margin-left: 0.8em;
 //   margin-right: 0.8em;
 //   color: grey;
 //   text-decoration: none;
 // }
+
+.btn-outline-secondary {
+  color: rgb(63, 60, 60);
+  border-color: rgb(63, 60, 60);
+}
