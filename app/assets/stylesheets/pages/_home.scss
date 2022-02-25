@@ -16,6 +16,10 @@
   font-weight: bold;
   letter-spacing: 5px;
 }
+.main-container {
+  min-height: calc(100vh - 58px);
+}
+
 
 .banner p {
   font-size: 30px;
