@@ -23,7 +23,6 @@
   letter-spacing: 5px;
   color: white;
   opacity: 1.02;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
 }
 
 .btn-flat {
@@ -47,18 +46,34 @@
 
 #header_front {
   height: auto;
-  margin-top: -80px;
+  margin-top: -120px;
   width: fit-content;
 }
 
 .buttons {
-  width: auto;
-  margin-top: 70px;
+  width: 660px;
+  margin-top: 84px;
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
+  margin-left: 73px;
 }
 
  #mainimg {
    margin-top: 100;
  }
+
+ .box {
+   width: 836px;
+   height: 26px;
+   background-color: #1e1e1d;
+   margin-top: -41px;
+ }
+
+ .box1 {
+  width: 733px;
+  height: 30px;
+  background-color: #1e1e1d;
+  margin-top: -76px;
+  margin-left: 52px;
+}
