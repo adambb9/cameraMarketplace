@@ -36,8 +36,7 @@ camera6 = Camera.create!(category: "Video Camera Tape", condition: "slight cosme
 
  camera5.photos.attach([{io: URI.open("https://res.cloudinary.com/dpauqhmri/image/upload/v1645717156/development/Nikon-D5600_lhyrza.jpg"), filename: 'D5600.jpeg', content_type: 'image/jpg'},
                         {io: URI.open("https://res.cloudinary.com/dpauqhmri/image/upload/v1645781244/development/d56002_tn18l3.jpg"), filename: 'D56002.jpeg', content_type: 'image/jpg'},
-                        {io: URI.open("https://res.cloudinary.com/dpauqhmri/image/upload/v1645781246/development/d56003_aicujv.jpg"), filename: 'D56003.jpeg', content_type: 'image/jpg'}
-  ])
+                        {io: URI.open("https://res.cloudinary.com/dpauqhmri/image/upload/v1645781246/development/d56003_aicujv.jpg"), filename: 'D56003.jpeg', content_type: 'image/jpg'}])
 
  camera6.photos.attach([{io: URI.open("https://res.cloudinary.com/dpauqhmri/image/upload/v1645715359/development/sonyvx2000_t6utsx.jpg"), filename: 'vx2000.jpeg', content_type: 'image/jpg'},
                         {io: URI.open("https://res.cloudinary.com/dpauqhmri/image/upload/v1645781247/development/vx20002_t1vnyb.jpg"), filename: 'vx20002.jpeg', content_type: 'image/jpg'},
