@@ -4,10 +4,16 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  height: 100px;
+  min-height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
+
+.containerFooter {
+  width: 100%;
+  bottom: 0;
+}
+
 .footer-links {
   display: flex;
   align-items: center;
