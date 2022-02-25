@@ -17,7 +17,7 @@
   font-size: larger;
   color: dimgrey;
   text-decoration: underline;
-  margin-top: 10px;
+
 }
 
 .infobox {
@@ -26,4 +26,32 @@
 
 .moreinfo {
   margin-top: 200px;
+}
+
+#seller {
+  color: orange;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+.buttons-card {
+  bottom: 0;
+}
+
+#make {
+  font-size: x-large;
+}
+
+#model {
+  font-size: 20pt;
+  margin-bottom: 30px;
+}
+
+#condition {
+  margin-top: 40px;
+}
+
+.product {
+  padding: 40px;
+
 }

@@ -4,7 +4,6 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  margin-top: 200;
 }
 
 .banner h1 {
@@ -30,7 +29,8 @@
 .btn-flat {
   color: white;
   padding: 8px 24px;
-  background: #ffffff;
+  box-shadow: 5px 5px rgb(31, 29, 29);
+  background: white;
   transition: background 0.3s ease;
   a {
     color: rgb(99, 99, 99);
@@ -53,5 +53,12 @@
 
 .buttons {
   width: auto;
-  margin-top: 100px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
 }
+
+ #mainimg {
+   margin-top: 100;
+ }
