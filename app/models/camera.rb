@@ -15,6 +15,6 @@ class Camera < ApplicationRecord
   pg_search_scope :search_by_category_make_model_price_and_condition,
     against: [ :category, :make, :model, :price, :condition ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
 end
