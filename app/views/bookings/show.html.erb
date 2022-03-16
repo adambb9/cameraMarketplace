@@ -5,8 +5,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3">
-                          <div class="text-center p-4"> <img id="main-image" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="250" /> </div>
-                          <div class="thumbnail text-center"> <img onclick="change_image(this)" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="70"> <img onclick="change_image(this)" src="https://i.etsystatic.com/7788774/r/il/09720e/991738063/il_fullxfull.991738063_sjmh.jpg" width="70"> </div>
+                          <div class="text-center p-4"> <%= cl_image_tag @booking.camera.photos, class:"camera-img rounded-top" %> </div>
+                          <div class="thumbnail text-center">  </div>
                         </div>
                     </div>
                     <div class="col-md-6">
