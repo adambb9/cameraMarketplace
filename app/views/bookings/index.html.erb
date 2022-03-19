@@ -5,7 +5,7 @@
   <div class="tabs">
   <label class="tab" id="one-tab" for="one">My Watchlist</label>
   <label class="tab" id="two-tab" for="two">Your Offers</label>
-  <label class="tab" id="three-tab" for="three">Messages</label>
+  <label class="tab" id="three-tab" for="three">My Cameras</label>
     </div>
   <div class="panels">
 
@@ -49,30 +49,70 @@
    <div class="panel" id="two-panel">
   <div class="panel-title">Your Offers</div>
 
-<h1> <%= @recieved_bookings %> </h1>
+<h1> <% @recieved_booking %> </h1>
   <% if @recieved_booking.empty? %>
-      <h6>You currently have no offers from customers</h6>
+    <h6>You haven't made any offers yet</h6>
     <% else %>
-      <% @recieved_booking.each do |camera| %>
+<% @recieved_booking.each do |camera| %>
+   <% camera_id = camera.camera_id%>
+    <% camera1 = Camera.find(camera_id) %>
+      <div class="col-12 col-sm-4 mb-4">
+        <div class="bg-white rounded shadow h-100">
+          <% if camera1.photos.empty? %>
+              <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
+          <% else %>
+            <% camera1.photos.each do |photo| %>
+              <% if photo == camera1.photos.first %>
+                <%= cl_image_tag photo.key, class:"camera-img rounded-top" %>
+              <% end %>
+            <% end %>
+          <% end %>
+            <div class="p-3 rounded-bottom d-flex flex-column">
+              <strong><%= camera.status %></strong>
+              <p><%= camera.comment %></p>
+              <div class="d-flex align-items-end justify-content-between pt-4">
+                <p>€<%= camera.bid %></p>
+              </div>
+              <small class="text-right flex-shrink-0"><%= link_to "See booking", booking_path(camera) %></small>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+   </div>
+  <div class="panel" id="three-panel">
+    <div class="panel-title">My Cameras</div>
+      <h1> <% @recieved_booking %> </h1>
+    <% if @recieved_booking.empty? %>
+      <h6>You haven't uploaded any cameras yet</h6>
+      <% else %>
+  <% @recieved_booking.each do |camera| %>
+    <% camera_id = camera.camera_id%>
+      <% camera1 = Camera.find(camera_id) %>
         <div class="col-12 col-sm-4 mb-4">
           <div class="bg-white rounded shadow h-100">
-                <%= cl_image_tag camera.photo.key, class:"camera-img rounded-top" %>
+            <% if camera1.photos.empty? %>
+                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
+            <% else %>
+              <% camera1.photos.each do |photo| %>
+                <% if photo == camera1.photos.first %>
+                  <%= cl_image_tag photo.key, class:"camera-img rounded-top" %>
+                <% end %>
+              <% end %>
+            <% end %>
               <div class="p-3 rounded-bottom d-flex flex-column">
                 <strong><%= camera.status %></strong>
                 <p><%= camera.comment %></p>
                 <div class="d-flex align-items-end justify-content-between pt-4">
                   <p>€<%= camera.bid %></p>
                 </div>
-                <small class="text-right flex-shrink-0"><%= link_to "See Offer", booking_path(camera) %></small>
+                <small class="text-right flex-shrink-0"><%= link_to "See booking", booking_path(camera) %></small>
               </div>
             </div>
-        </div>
-      <% end %>
-    <% end %>
+          </div>
+          <% end %>
+        <% end %>
     </div>
-  <div class="panel" id="three-panel">
-    <div class="panel-title">My Cameras</div>
-    <p>Coming soon.</p>
     </div>
   </div>
 </div>
