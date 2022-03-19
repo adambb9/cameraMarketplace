@@ -4,11 +4,16 @@
             <div class="card">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="images p-3">
-                          <div class="text-center p-4"> <%= cl_image_tag @booking.camera.photos, class:"camera-img rounded-top" %> </div>
-                          <div class="thumbnail text-center">  </div>
-                        </div>
+              <div class="images p-3">
+                <% @booking.camera.photos.each do |photo| %>
+                  <% if photo == @booking.camera.photos.first %>
+                    <div class="text-center p-4">
+                      <%= cl_image_tag photo.key, height: 450, width: 450, crop: :fill %>
                     </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
                     <div class="col-md-6">
                         <div class="product p-4">
                             <div class="d-flex justify-content-between align-items-center">
