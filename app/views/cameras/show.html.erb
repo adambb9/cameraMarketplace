@@ -9,7 +9,7 @@
                 <% @camera.photos.each do |photo| %>
                   <% if photo == @camera.photos.first %>
                     <div class="text-center p-4">
-                      <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %>
+                      <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fit %>
                     </div>
                   <% end %>
                 <% end %>
