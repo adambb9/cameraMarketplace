@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
     @send_bookings = current_user.send_bookings
     @recieved_booking = current_user.recieved_bookings
+    @cameras = current_user.cameras
   end
 
   def accept
@@ -69,6 +70,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to bookings_path
   end
+
 
   private
 
