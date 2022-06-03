@@ -1,6 +1,0 @@
-production:
-  cloud_name: <%= ENV['cloud_name'] %>
-  api_key: <%= ENV['api_key'] %>
-  api_secret: <%= ENV['api_secret'] %>
-  secure: true
-  cdn_subdomain: true

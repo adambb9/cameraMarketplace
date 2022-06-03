@@ -5,6 +5,7 @@
         <div class="cam-card">
           <div class="row">
             <div class="col-md-6">
+
               <div class="images p-3">
                 <% @camera.photos.each do |photo| %>
                   <% if photo == @camera.photos.first %>
@@ -14,6 +15,7 @@
                   <% end %>
                 <% end %>
               </div>
+
             </div>
           <div class="col-md-6">
             <div class="product">
