@@ -17,6 +17,9 @@
            <li class="nav-item">
             <%= link_to "Cameras", cameras_path, id: "camera-link" %>
           </li>
+           <li class="nav-item">
+            <%= link_to "Accessoires", accessories_path, id: "camera-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "My Area", bookings_path, id: "booking-link" %>
           </li>
@@ -36,6 +39,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Home", root_path, id: "home-link", class: "dropdown-item" %>
               <%= link_to "My Area", bookings_path, id: "booking-link", class: "dropdown-item" %>
+              <%= link_to "Accessories", accessories_path, id: "booking-link", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
