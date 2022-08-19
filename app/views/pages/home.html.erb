@@ -3,16 +3,25 @@
   <div class="container home" id= "header_front">
     <div class ="hometitles">
     <h1>Camera's, lens's and accessories</h1>
-    <p>Explore our range of used and new products</p>
+    <p>Explore our range of new and used products</p>
     </div>
 
     <%# <div class= "box"></div>
     <div class= "box1"></div> %>
 
     <div class="buttons">
-      <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Cameras", cameras_path, id: "back-link", class: "backlink" %></button>
-      <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Accessories", accessories_path, id: "back-link", class: "backlink" %></button>
-      <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Sign up", new_user_registration_path, id: "booking-link" %></button>
+      <div class="areas">
+        <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Cameras", cameras_path, id: "back-link", class: "backlink" %></button>
+        <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Accessories", accessories_path, id: "back-link", class: "backlink" %></button>
+      </div>
+
+      <% if user_signed_in? %>
+          <div></div>
+        <% else %>
+          <div class="signUp">
+            <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Sign up", new_user_registration_path, id: "booking-link" %></button>
+          </div>
+        <% end %>
     </div>
 
   </div>

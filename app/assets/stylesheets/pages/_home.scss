@@ -9,6 +9,10 @@
   margin-top: 3.5em;
 }
 
+.areas {
+  margin-bottom: 3.5em;
+}
+
 .banner {
   height: 700px;
   background-size: cover;
@@ -68,14 +72,15 @@
 }
 
 .buttons {
-  display: flex;
+  display: flow-root;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 4em;
 }
 
  #mainimg {
    margin-top: 100;
+   width: -webkit-fill-available;
  }
 
  .box {
@@ -96,11 +101,22 @@
 // resizing
 
 // mobile
-// @media (min-width:480px) and (max-width:700px) {
-//   h1 {
-//     font-size: 0.5rem;
-//   }
-// }
+@media (min-width:350px) and (max-width:700px) {
+  .areas {
+    margin-bottom: 2.5em;
+  }
+
+  .btn-flat a {
+    font-size: 1rem;
+  }
+  .banner h1 {
+    font-size: 1.7rem;
+  }
+  .banner p {
+    font-size: 1rem;
+    margin-top: 1.5em;
+  }
+}
 
 // body{
 //   max-width:100vh;

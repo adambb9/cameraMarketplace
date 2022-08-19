@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "cameralogo.png" %>
+      <%= image_tag "cameralogo.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
             <%= link_to "Cameras", cameras_path, id: "camera-link" %>
           </li>
            <li class="nav-item">
-            <%= link_to "Accessoires", accessories_path, id: "camera-link" %>
+            <%= link_to "Accessories", accessories_path, id: "camera-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "My Area", bookings_path, id: "booking-link" %>
@@ -39,6 +39,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Home", root_path, id: "home-link", class: "dropdown-item" %>
               <%= link_to "My Area", bookings_path, id: "booking-link", class: "dropdown-item" %>
+              <%= link_to "Cameras", cameras_path, id: "booking-link", class: "dropdown-item" %>
               <%= link_to "Accessories", accessories_path, id: "booking-link", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
