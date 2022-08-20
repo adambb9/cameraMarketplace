@@ -1,10 +1,15 @@
-// Specific CSS for your home-page
+// home-page
+.main-container {
+  min-height: calc(100vh - 58px);
+}
+
 .home {
   display: flow-root;
   justify-content: center;
   text-align: center;
 }
 
+// titles
 .hometitles {
   margin-top: 3.5em;
 }
@@ -32,10 +37,6 @@
   font-weight: bold;
   letter-spacing: 5px;
 }
-.main-container {
-  min-height: calc(100vh - 58px);
-}
-
 
 .banner p {
   font-size: 30px;
@@ -45,6 +46,8 @@
   color: white;
   opacity: 1.02;
 }
+
+// buttons
 
 .btn-flat {
   color: white;
@@ -81,6 +84,7 @@
  #mainimg {
    margin-top: 100;
    width: -webkit-fill-available;
+   height: -webkit-fill-available;
  }
 
  .box {
@@ -105,7 +109,6 @@
   .areas {
     margin-bottom: 2.5em;
   }
-
   .btn-flat a {
     font-size: 1rem;
   }
@@ -116,10 +119,7 @@
     font-size: 1rem;
     margin-top: 1.5em;
   }
+  .hometitles {
+    margin-top: 10em;
+  }
 }
-
-// body{
-//   max-width:100vh;
-//   height:100%;
-//   overflow-x: hidden;
-// }

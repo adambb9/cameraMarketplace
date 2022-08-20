@@ -1,9 +1,11 @@
+// navbar positioning
 .navbar-lewagon {
   justify-content: space-between;
   background: none;
   z-index: 1;
 }
 
+// nav items & styling
 .navbar-nav {
   justify-content: center;
   align-items: center;
@@ -38,22 +40,15 @@
  }
 }
 
+.nav-item a:hover {
+  color: #ecbf5d;
+}
+
 #loginbutt {
   color: white;
 }
-// #home-link {
-//   margin-left: 0.8em;
-//   margin-right: 0.8em;
-//   color: grey;
-//   text-decoration: none;
-// }
 
 .btn-outline-secondary {
   color: rgb(63, 60, 60);
   border-color: rgb(63, 60, 60);
 }
-
-// #collapse {
-//     position:absolute;
-//     z-index:1;
-// }
