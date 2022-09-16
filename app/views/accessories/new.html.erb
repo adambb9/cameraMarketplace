@@ -7,8 +7,6 @@
         <%= f.label :category %>
         <%= f.select :category, Accessory::CATEGORIES, prompt: 'Select Category' %>
         <%= f.input :make, placeholder: 'Add your accessories brand' %>
-        <%# <%= f.input :model, placeholder: 'Add your accessories model' %>
-        <%# <%= f.input :year, placeholder: 'Add production year' %>
         <%= f.label :condition %>
         <%= f.select :condition, Accessory::CONDITIONS, prompt: 'Select Condition' %>
         <%= f.input :price, placeholder: 'Add your price' %>
