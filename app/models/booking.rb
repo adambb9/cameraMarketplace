@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   STATUS = ["Accepted", "Pending", "Rejected"]
   belongs_to :camera
+  # belongs_to :accessory
   belongs_to :user
 
   validates :comment, length: { minimum: 6 }

@@ -1,4 +1,23 @@
-// Specific CSS for your home-page
+// home-page
+.main-container {
+  min-height: calc(100vh - 58px);
+}
+
+.home {
+  display: flow-root;
+  justify-content: center;
+  text-align: center;
+}
+
+// titles
+.hometitles {
+  margin-top: 3.5em;
+}
+
+.areas {
+  margin-bottom: 3.5em;
+}
+
 .banner {
   height: 700px;
   background-size: cover;
@@ -18,10 +37,6 @@
   font-weight: bold;
   letter-spacing: 5px;
 }
-.main-container {
-  min-height: calc(100vh - 58px);
-}
-
 
 .banner p {
   font-size: 30px;
@@ -31,6 +46,8 @@
   color: white;
   opacity: 1.02;
 }
+
+// buttons
 
 .btn-flat {
   color: white;
@@ -58,16 +75,16 @@
 }
 
 .buttons {
-  width: 660px;
-  margin-top: 84px;
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-  margin-left: 73px;
+  display: flow-root;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4em;
 }
 
  #mainimg {
    margin-top: 100;
+   width: -webkit-fill-available;
+   height: -webkit-fill-available;
  }
 
  .box {
@@ -83,4 +100,26 @@
   background-color: #1e1e1d;
   margin-top: -76px;
   margin-left: 52px;
+}
+
+// resizing
+
+// mobile
+@media (min-width:350px) and (max-width:700px) {
+  .areas {
+    margin-bottom: 2.5em;
+  }
+  .btn-flat a {
+    font-size: 1rem;
+  }
+  .banner h1 {
+    font-size: 1.7rem;
+  }
+  .banner p {
+    font-size: 1rem;
+    margin-top: 1.5em;
+  }
+  .hometitles {
+    margin-top: 10em;
+  }
 }
