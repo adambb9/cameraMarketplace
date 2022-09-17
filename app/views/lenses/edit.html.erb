@@ -1,14 +1,30 @@
+<%# # t.string :category
+# t.string :make
+# t.string :type
+# t.text :lens_mount
+# t.float :diameter
+# t.decimal :price
+# t.text :condition
+# t.text :description
+ %>
 <div class="containerForm">
   <h1>Edit your Lenses</h1>
 
   <div class="row">
     <div class="col-6-sm">
-      <%= simple_form_for(@accessory) do |f| %>
+      <%= simple_form_for(@lense) do |f| %>
         <%= f.label :category %>
-        <%= f.select :category, Lens::CATEGORIES, prompt: 'Select Category' %>
+        <%= f.select :category, Lense::CATEGORIES, prompt: 'Select Category' %>
         <%= f.input :make, placeholder: 'Add your lenses brand' %>
+        <%= f.label :lens_type %>
+        <%= f.select :lens_type, Lense::LENS_TYPES, prompt: 'Select Lens Type' %>
+        <%= f.label :lens_mount %>
+        <%= f.select :lens_mount, Lense::LENS_MOUNTS, prompt: 'Select Lens Mount' %>
+        <%= f.label :lens_mount %>
+        <%= f.select :diameter, Lense::DIAMETERS, prompt: 'Select Lens Diameter' %>
         <%= f.label :condition %>
-        <%= f.select :condition, Lens::CONDITIONS, prompt: 'Select Condition' %>
+        <%= f.select :condition, Lense::CONDITIONS, prompt: 'Select Condition' %>
+        <%= f.input :description, placeholder: 'Add a description of the lens' %>
         <%= f.input :price, placeholder: 'Add your price' %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Edit", class: "btn btn-dark" %>
