@@ -32,7 +32,84 @@
   border-color: rgb(206, 212, 218);
   color: rgb(108, 117, 125);
 }
+// lenses form
 
+#lense_category {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: rgb(244, 244, 244);
+  border-color: rgb(206, 212, 218);
+  color: rgb(108, 117, 125);
+  margin-bottom: 0.2em;
+}
+
+#lense_condition {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: rgb(244, 244, 244);
+  border-color: rgb(206, 212, 218);
+  color: rgb(108, 117, 125);
+  margin-bottom: 0.2em;
+}
+
+#lense_lens_type {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: rgb(244, 244, 244);
+  border-color: rgb(206, 212, 218);
+  color: rgb(108, 117, 125);
+  // padding-bottom: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+#lense_lens_mount {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: rgb(244, 244, 244);
+  border-color: rgb(206, 212, 218);
+  color: rgb(108, 117, 125);
+  padding-bottom: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+#lense_diameter {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: rgb(244, 244, 244);
+  border-color: rgb(206, 212, 218);
+  color: rgb(108, 117, 125);
+  margin-bottom: 0.2em;
+}
 .form-label {
   margin-top: 0.2em;
 }
