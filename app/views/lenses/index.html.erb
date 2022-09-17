@@ -26,6 +26,7 @@ lense (lenses - lense)
             <div class="p-3 rounded-bottom d-flex flex-column">
               <strong><%= lense.make %></strong>
               <strong><%= lense.lens_type %></strong>
+              <strong><%= lense.lens_mount %></strong> (<%= lense.diameter %>mm)
               <div class="d-flex align-items-end justify-content-between pt-4">
                 <p>€<%= lense.price %>0</p>
                 <small class="text-right flex-shrink-0"><%= link_to "See more", lense_path(lense), class: 'text-danger' %></small>
