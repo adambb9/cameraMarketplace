@@ -86,3 +86,6 @@ class BookingsController < ApplicationController
     @camera = Camera.find(params[:camera_id])
   end
 end
+
+# add accessories & lenses to booking
+# set_item -> find camera / accessory/ or lens params

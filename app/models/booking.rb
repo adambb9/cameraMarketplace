@@ -9,3 +9,6 @@ class Booking < ApplicationRecord
   validates :bid, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100_000 }
   validates :camera_id, uniqueness: { scope: :user_id, message: "is already selected" }
 end
+
+# add accessory_id to bookings schema
+# add accessory_id ito controller

@@ -18,4 +18,10 @@ Rails.application.routes.draw do
   end
   # resources :bookings, only: [ :index, :accept, :reject, :show, :edit, :update, :destroy ]
 
+  # routes lenses
+  resources :lenses do
+    resources :bookings, only: [ :new, :create]
+  end
+  # resources :bookings, only: [ :index, :accept, :reject, :show, :edit, :update, :destroy ]
+
 end
