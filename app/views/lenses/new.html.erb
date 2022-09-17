@@ -1,0 +1,18 @@
+<div class="containerForm">
+  <h1>Add your Lens</h1>
+
+  <div class="row">
+    <div class="col-6-sm">
+      <%= simple_form_for(@accessory) do |f| %>
+        <%= f.label :category %>
+        <%= f.select :category, Accessory::CATEGORIES, prompt: 'Select Category' %>
+        <%= f.input :make, placeholder: 'Add your lenses brand' %>
+        <%= f.label :condition %>
+        <%= f.select :condition, Accessory::CONDITIONS, prompt: 'Select Condition' %>
+        <%= f.input :price, placeholder: 'Add your price' %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Create", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
+</div>
