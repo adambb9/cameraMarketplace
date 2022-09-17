@@ -32,6 +32,38 @@
   border-color: rgb(206, 212, 218);
   color: rgb(108, 117, 125);
 }
+
+// accessories form
+
+#accessory_category {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: rgb(244, 244, 244);
+  border-color: rgb(206, 212, 218);
+  color: rgb(108, 117, 125);
+  margin-bottom: 0.2em;
+}
+
+#accessory_condition {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: rgb(244, 244, 244);
+  border-color: rgb(206, 212, 218);
+  color: rgb(108, 117, 125);
+}
+
 // lenses form
 
 #lense_category {
