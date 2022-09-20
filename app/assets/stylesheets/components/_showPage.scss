@@ -12,3 +12,25 @@
   text-decoration: none;
   color: gray
 }
+
+#description {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+// show page accessory
+#conditionAcc {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+// media queries
+@media (max-width: 600px) {
+  .imageProduct {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .infobox {
+    margin-top: 1em !important;
+  }
+}

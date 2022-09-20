@@ -10,7 +10,7 @@
                 <% @accessory.photos.each do |photo| %>
                   <% if photo == @accessory.photos.first %>
                     <div class="text-center p-4">
-                      <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fit %>
+                      <%= cl_image_tag photo.key, height: 500, width: 600, class: "imageProduct", crop: :fit %>
                     </div>
                   <% end %>
                 <% end %>
@@ -23,16 +23,13 @@
                     <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i>
                       <span class="ml-1"><%= link_to 'Go Back', accessories_path, id:"show-back-link" %></span> </div> <i class="fa fa-shopping-cart text-muted"></i>
                       </div>
-                      <div class="infobox">
-                        <span class="text-uppercase text-muted brand" id="make"><%= @accessory.make %></span>
-
+                        <div class="infobox"> <span class="text-uppercase text-muted brand" id="make"><%= @accessory.make %></span>
+                        <h5 class="text-uppercase" id="model" ><%= @accessory.category %></h5>
                         </div>
 
                         <div clas= "moreinfo">
-                          <span class="text-uppercase text-muted brand" id="make"><%= @accessory.category %></span>
-
                         <span class="act-price">PRICE: <%= @accessory.price %> €</span>
-                            <div class="ml-2" id="condition"> Condition: <%= @accessory.condition %></div>
+                            <div class="ml-2" id="conditionAcc"> Condition: <%= @accessory.condition %></div>
                             <div class="ml-2" id="seller"> Seller: <%= @accessory.user.first_name %></div>
                           </div>
                               <div class= "buttons-card">

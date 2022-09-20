@@ -10,7 +10,7 @@
                 <% @lense.photos.each do |photo| %>
                   <% if photo == @lense.photos.first %>
                     <div class="text-center p-4">
-                      <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fit %>
+                      <%= cl_image_tag photo.key, height: 500, width: 600, class: "imageProduct", crop: :fit %>
                     </div>
                   <% end %>
                 <% end %>
@@ -32,9 +32,9 @@
                         <span class="act-price">PRICE: <%= @lense.price %> €</span>
                             <div class="ml-2" id="condition"> Mount type: <%= @lense.lens_mount %></div>
                             <div class="ml-2" id="condition"> Diameter: <%= @lense.diameter %>(mm)</div>
-                            <div class="ml-2" id="condition"> Condition: <%= @lense.condition %></div>
+                            <div class="ml-2" id="description"> Condition: <%= @lense.condition %></div>
                             <div class="ml-2" id="seller"> Seller: <%= @lense.user.first_name %></div>
-                            <div class="ml-2" id="seller"> Description: <%= @lense.description %></div>
+                            <div class="ml-2" id="description"> Description: <%= @lense.description %></div>
                           </div>
                               <div class= "buttons-card">
                             <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Offer', new_lense_booking_path(@lense), id:"show-bid-link"%></button>

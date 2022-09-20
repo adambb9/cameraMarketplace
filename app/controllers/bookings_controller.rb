@@ -90,13 +90,4 @@ end
 # add accessories & lenses to booking
 # differentiate instaces if cam lens or acc
 
-# private [section]
-# def set_accessory
-#   @accessory = Accessory.find(params[:accessory_id])
-# end
-
-# def set_lense
-#   @lense = Lense.find(params[:lense_id])
-# end
-
-# or by changing set_camera to -> set_item : find camera / accessory/ or lens params
+# changing set_camera to -> set_item : find camera / accessory/ or lens params

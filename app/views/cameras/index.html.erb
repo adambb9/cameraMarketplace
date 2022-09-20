@@ -21,10 +21,10 @@
             <% end %>
             <div class="p-3 rounded-bottom d-flex flex-column">
               <strong><%= camera.make %></strong>
-              <p><%= camera.model %></p>
+              <i><p><%= camera.model %></p></i>
               <div class="d-flex align-items-end justify-content-between pt-4">
                 <p>€<%= camera.price %>0</p>
-                <small class="text-right flex-shrink-0"><%= link_to "See more", camera_path(camera), class: 'text-danger' %></small>
+                <small class="text-right flex-shrink-0"><%= link_to "View", camera_path(camera), class: 'btn btn-warning' %></small>
               </div>
             </div>
           </div>

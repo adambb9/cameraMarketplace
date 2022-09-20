@@ -24,12 +24,12 @@ lense (lenses - lense)
               <% end %>
             <% end %>
             <div class="p-3 rounded-bottom d-flex flex-column">
-              <strong><%= lense.make %></strong>
-              <strong><%= lense.lens_type %></strong>
+              <strong><%= lense.make %> <%= lense.lens_type %></strong>
+              <%# <strong></strong> %>
               <strong><%= lense.lens_mount %></strong> (<%= lense.diameter %>mm)
               <div class="d-flex align-items-end justify-content-between pt-4">
                 <p>€<%= lense.price %>0</p>
-                <small class="text-right flex-shrink-0"><%= link_to "See more", lense_path(lense), class: 'text-danger' %></small>
+                <small class="text-right flex-shrink-0"><%= link_to "View", lense_path(lense), class: 'btn btn-warning' %></small>
               </div>
             </div>
           </div>
@@ -37,3 +37,6 @@ lense (lenses - lense)
       <% end %>
   </div>
 </div>
+
+
+<%# seemore  old class - text-danger %>
