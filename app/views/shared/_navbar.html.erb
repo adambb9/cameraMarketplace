@@ -1,13 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <%# Logo %>
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "cameralogo.png" %>
     <% end %>
 
+    <%# Mobile collapse toggler %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <%# Navbar Items %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
@@ -37,17 +40,18 @@
               <%= submit_tag "Go", class: "btn btn-dark" %>
               <% end %>
           </div>
+
+          <%# Avatar/User Dropdown Menu %>
           <li class="nav-item dropdown">
             <%= image_tag "https://avatars.githubusercontent.com/u/95916189?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Home", root_path, id: "home-link", class: "dropdown-item" %>
-              <%= link_to "My Area", bookings_path, id: "booking-link", class: "dropdown-item" %>
-              <%= link_to "Cameras", cameras_path, id: "booking-link", class: "dropdown-item" %>
-              <%= link_to "Lenses", lenses_path, id: "booking-link", class: "dropdown-item" %>
-              <%= link_to "Accessories", accessories_path, id: "booking-link", class: "dropdown-item" %>
+              <%= link_to "Messages", root_path, id: "home-link", class: "dropdown-item" %>
+              <%= link_to "Profile Settings", bookings_path, id: "booking-link", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
+
+        <%# If user not signed in show only login %>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary" %>
@@ -57,3 +61,9 @@
     </div>
   </div>
 </div>
+
+
+<%#
+  Avatar/User Dropdown Menu [ <li class="nav-item dropdown"> ]
+    Needs link_to: Messages, Profile Settings & Log Out
+ %>

@@ -2,10 +2,11 @@
   <div class="row d-flex justify-content-center">
     <div class="col-md-20">
       <div class="col-md-20">
+        <%# Card %>
         <div class="cam-card">
           <div class="row">
             <div class="col-md-6">
-
+              <%# Card Image %>
               <div class="images p-3">
                 <% @accessory.photos.each do |photo| %>
                   <% if photo == @accessory.photos.first %>
@@ -15,35 +16,41 @@
                   <% end %>
                 <% end %>
               </div>
-
             </div>
           <div class="col-md-6">
+            <%# Product Info %>
             <div class="product">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i>
-                      <span class="ml-1"><%= link_to 'Go Back', accessories_path, id:"show-back-link" %></span> </div> <i class="fa fa-shopping-cart text-muted"></i>
-                      </div>
-                        <div class="infobox"> <span class="text-uppercase text-muted brand" id="make"><%= @accessory.make %></span>
-                        <h5 class="text-uppercase" id="model" ><%= @accessory.category %></h5>
-                        </div>
-
-                        <div clas= "moreinfo">
-                        <span class="act-price">PRICE: <%= @accessory.price %> €</span>
-                            <div class="ml-2" id="conditionAcc"> Condition: <%= @accessory.condition %></div>
-                            <div class="ml-2" id="seller"> Seller: <%= @accessory.user.first_name %></div>
-                          </div>
-                              <div class= "buttons-card">
-                            <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Offer', new_accessory_booking_path(@accessory), id:"show-bid-link"%></button>
-                          <% if policy(@accessory).edit? %>
-                            <small class="text-right flex-shrink-0"><%= link_to "Edit accessory", edit_accessory_path(@accessory), class: "btn btn-dark"  %></small>
-                          <% end %>
-                          <% if policy(@accessory).destroy? %>
-                            <small class="text-right flex-shrink-0"><%= link_to  "Delete accessory", accessory_path(@accessory), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></small>
-                          <% end %>
-                          </div>
-                    </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i>
+                  <span class="ml-1"><%= link_to 'Go Back', accessories_path, id:"show-back-link" %></span>
                 </div>
+              </div>
+
+              <div class="infobox"> <span class="text-uppercase text-muted brand" id="make"><%= @accessory.make %></span>
+                <h5 class="text-uppercase" id="model" ><%= @accessory.category %></h5>
+              </div>
+
+              <div clas= "moreinfo">
+                <span class="act-price">PRICE: <%= @accessory.price %> €</span>
+
+                <div class="ml-2" id="conditionAcc"> Condition: <%= @accessory.condition %></div>
+
+                <div class="ml-2" id="seller"> Seller: <%= @accessory.user.first_name %></div>
+              </div>
+
+              <%# Buttons %>
+              <div class= "buttons-card">
+                <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Offer', new_accessory_booking_path(@accessory), id:"show-bid-link"%></button>
+                  <% if policy(@accessory).edit? %>
+                      <small class="text-right flex-shrink-0"><%= link_to "Edit accessory", edit_accessory_path(@accessory), class: "btn btn-dark"  %></small>
+                    <% end %>
+                  <% if policy(@accessory).destroy? %>
+                    <small class="text-right flex-shrink-0"><%= link_to  "Delete accessory", accessory_path(@accessory), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></small>
+                  <% end %>
+              </div>
             </div>
+          </div>
         </div>
     </div>
+  </div>
 </div>

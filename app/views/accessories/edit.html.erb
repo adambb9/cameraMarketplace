@@ -1,14 +1,13 @@
 <div class="containerForm">
   <h1>Edit your Accessory</h1>
 
+  <%# Edit Accessory Simpleform inputs %>
   <div class="row">
     <div class="col-6-sm">
       <%= simple_form_for(@accessory) do |f| %>
         <%= f.label :category %>
         <%= f.select :category, Accessory::CATEGORIES, prompt: 'Select Category' %>
         <%= f.input :make, placeholder: 'Add your accessories brand' %>
-        <%# <%= f.input :model, placeholder: 'Add your accessories model' %>
-        <%# <%= f.input :year, placeholder: 'Add production year' %>
         <%= f.label :condition %>
         <%= f.select :condition, Accessory::CONDITIONS, prompt: 'Select Condition' %>
         <%= f.input :price, placeholder: 'Add your price' %>

@@ -1,14 +1,14 @@
-
+<%# Stock Background Image %>
 <div class="banner" id="mainimg" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dpauqhmri/image/upload/v1645803289/sellcameras_1_tchohh.jpg);">
   <div class="container home" id= "header_front">
+
+    <%# titles %>
     <div class ="hometitles">
-    <h1>Camera's, lens's and accessories</h1>
-    <p>Explore our range of new and used products</p>
+      <h1>Camera's, lens's and accessories</h1>
+      <p>Explore our range of new and used products</p>
     </div>
 
-    <%# <div class= "box"></div>
-    <div class= "box1"></div> %>
-
+    <%# buttons %>
     <div class="buttons">
       <div class="areas">
         <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Cameras", cameras_path, id: "back-link", class: "backlink" %></button>
@@ -16,6 +16,7 @@
         <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Lenses", lenses_path, id: "back-link", class: "backlink" %></button>
       </div>
 
+    <%# if new user show signup button %>
       <% if user_signed_in? %>
           <div></div>
         <% else %>
@@ -24,6 +25,5 @@
           </div>
         <% end %>
     </div>
-
   </div>
 </div>
