@@ -41,6 +41,8 @@
                     <div class="ml-2"> Year: <%= @camera.year %></div>
                     <div class="ml-2" id="seller"> Seller: <%= @camera.user.first_name %></div>
                   </div>
+                        <%# Missing description! %>
+
                 <%# Buttons %>
                 <div class= "buttons-card">
                   <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Offer', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
