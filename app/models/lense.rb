@@ -18,7 +18,7 @@ class Lense < ApplicationRecord
   validates :description, length: { minimum: 50 }
 
   include PgSearch::Model
-  pg_search_scope :search_by_category_make_lens_type_diameter_lens_mountprice_and_condition,
+  pg_search_scope :search_by_category_make_lens_type_diameter_lens_mount_price_and_condition,
     against: [ :category, :make, :lens_type, :diameter, :lens_mount, :price, :condition ],
     using: {
       tsearch: { prefix: true }

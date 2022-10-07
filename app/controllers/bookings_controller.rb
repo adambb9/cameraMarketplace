@@ -88,6 +88,7 @@ class BookingsController < ApplicationController
 end
 
 # add accessories & lenses to booking
+
 # differentiate instaces if cam lens or acc
 
 # changing set_camera to -> set_item : find camera / accessory/ or lens params
