@@ -15,14 +15,9 @@ const cameraModels = [
   "Canon XA25",
   "Canon XA50",
   "Canon XA55",
-
   "Canon XF405",
   "Canon XF705",
   "Canon XF305",
-
-
-
-
   "Sony a7 III",
   "Nikon Z7 II",
   "Fujifilm X-T4",
@@ -59,7 +54,6 @@ const cameraModels = [
   "Sony HDR-GW",
   "Sony VX2000/PD150",
   "Sony VX2100/PD170",
-
 ];
 
 const searchInput = document.querySelector(".search-bar input[type='text']");
