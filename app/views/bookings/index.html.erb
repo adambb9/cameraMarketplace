@@ -1,4 +1,47 @@
 <%# Dashboard Area %>
+<div class=container>
+  <h2 class="profileBanner">Profile</h2>
+  <hr>
+  <div class="userInfo">
+    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    <h3 id="username">username</h3>
+    <div class="row container userStats">
+      <table class="statsTable">
+        <thead>
+          <tr>
+            <th>Followers</th>
+            <th>Following</th>
+            <th>Transactions</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>399</td>
+            <td>95</td>
+            <td>55</td>
+            <td>4.9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <h4 class=" infoHeader">My Information</h4>
+      <h6>Professional Photographer looking to buy and sell gear, located in Spain and ready to ship!</h6>
+      <div class="row justify-content-center">
+        <div class="row userBtns col-6">
+          <button class="flex-shrink-0 btn btn-dark profileBtn">Edit Profile</button>
+          <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Payments</button>
+          <button class="flex-shrink-0 btn btn-dark profileBtn">See Orders</button>
+          <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Followers/Following</button>
+        </div>
+        <div class="helpBtns">
+          <button class="flex-shrink-0 btn btn-success helpBtn">Customer Support</button>
+          <button class="flex-shrink-0 btn btn-warning helpBtn">Report User</button>
+        </div>
+    </div>
+    <hr>
+  </div>
+</div>
 
 <%# Dashboard Tabs %>
 <div class="warpper">
@@ -125,7 +168,73 @@
       <%# Empty Messaging Section - List of all messages on inital enter -> ability to navigate to single conversations on instance of product %>
       <div class="panel" id="four-panel">
         <div class="panel-title">Messages</div>
-        <p>Comin soon</p>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-2 chat-sidebar">
+                <ul class="list-unstyled">
+                  <li class="active"><a href="#">Panasonic HVX Used</a></li>
+                  <li><a href="#">VX2000 New With Box</a></li>
+                  <li><a href="#">Used Century 72mm Lens</a></li>
+                  <li><a href="#">Opteka 82mm Lens Used</a></li>
+                </ul>
+              </div>
+            <div class="col-md-10 chat-window">
+              <div class="row">
+                <div class="col-md-12 chat-header">
+                  <h2>Panasonic HVX Used</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 chat-messages">
+                  <div class="message">
+                    <div class="message-author">
+                      <span class="author-name">user23</span>
+                      <span class="time">10:00am</span>
+                    </div>
+                    <div class="message-text">
+                      Hey, could you do 325 shipped for this? I like it a lot!
+                    </div>
+                  </div>
+                  <div class="col-md-12 chat-messages">
+                  <div class="message">
+                    <div class="message-author">
+                      <span class="author-name">user23</span>
+                      <span class="time">10:00am</span>
+                    </div>
+                    <div class="message-text offerMsg">
+                      Offer sent: 325$
+                      <div class="offer-buttons">
+                        <button class="btn btn-dark accept-button">Accept</button>
+                        <button class="btn btn-dark decline-button">Decline</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="message">
+                    <div class="message-author">
+                      <span class="author-name">hansPeter1</span>
+                      <span class="time">10:05am</span>
+                    </div>
+                    <div class="message-text">
+                      Yeah, minimum I could do is 350+shipping for the camera. Lmk what you think, its still in great nick!
+                    </div>
+                  </div>
+                  <!-- more messages here -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 chat-input">
+                  <form>
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="Type your message here"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Offer</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
   </div>
 </div>

@@ -45,7 +45,9 @@
 
                 <%# Buttons %>
                 <div class= "buttons-card">
-                  <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Offer', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
+                  <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Offer', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
+                  <button class="btn btn-danger text-uppercase mr-2 px-4" ><%=link_to 'Buy Now', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
+
                     <% if policy(@camera).edit? %>
                       <small class="text-right flex-shrink-0"><%= link_to "Edit camera", edit_camera_path(@camera), class: "btn btn-dark"  %></small>
                     <% end %>

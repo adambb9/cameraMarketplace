@@ -9,6 +9,54 @@
   margin-bottom: 24;
 }
 
+// UserStats - Followers etcç
+
+.userStats {
+  margin-top: 2em;
+  text-align: center;
+}
+.statsTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#username {
+  display: contents !important;
+}
+
+.userInfo {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.infoHeader {
+  margin-top: 1em;
+}
+
+.profileBtn{
+  margin-top: 1em;
+  color: white;
+  &:hover{
+      color: #ecbf5d;
+    }
+  }
+
+ .helpBtns {
+  margin-top: 1em;
+  text-align:center;
+ }
+
+.helpBtn {
+  // margin-left: 5em;
+  &:hover{
+    color: white;
+  }
+}
+
+// .btn-success {
+//   background-color: green;
+// }
+
 .tab{
   cursor: pointer;
   padding:10px 20px;
@@ -33,6 +81,85 @@
   display:none;
   animation: fadein .8s;
 }
+
+// Message Mock up
+
+.chat-sidebar {
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  height: 100vh;
+  padding: 20px;
+}
+
+.chat-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-sidebar li {
+  margin-bottom: 10px;
+  margin-top: 3em;
+}
+
+.chat-sidebar li.active a {
+  font-weight: bold;
+}
+
+.chat-window {
+  padding: 20px;
+}
+
+.chat-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-messages {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.message-author {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.offerMsg {
+  color:blue;
+  font-weight: bolder;
+  text-align: -webkit-center;
+  font-size: 1.5em;
+}
+
+// offer buttons
+.accept-button:hover {
+  background-color: #27ae60;
+}
+
+.decline-button:hover {
+  background-color: #c0392b;
+}
+
+.author-name {
+  font-weight: bold;
+}
+
+.time {
+  color: #868e96;
+}
+
+.chat-input {
+  margin-top: 10px;
+}
+
 @keyframes fadein {
     from {
         opacity:0;
