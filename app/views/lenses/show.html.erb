@@ -40,6 +40,7 @@
                         <%# Buttons %>
                         <div class= "buttons-card">
                             <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Offer', new_lense_booking_path(@lense), id:"show-bid-link"%></button>
+                            <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Message', new_lense_booking_path(@lense), id:"show-bid-link"%></button>
                             <button class="btn btn-danger text-uppercase mr-2 px-4" ><%=link_to 'Buy Now', new_lense_booking_path(@lense), id:"show-bid-link"%></button>
 
                           <% if policy(@lense).edit? %>
