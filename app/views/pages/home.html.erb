@@ -20,7 +20,7 @@
       <% if user_signed_in? %>
           <div></div>
         <% else %>
-          <div class="signUp">
+          <div class="signUp" style="margin-bottom: 1.5em;">
             <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Sign up", new_user_registration_path, id: "booking-link" %></button>
           </div>
         <% end %>
