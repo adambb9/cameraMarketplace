@@ -42,6 +42,7 @@
               <%# Buttons %>
               <div class= "buttons-card">
                 <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Offer', new_accessory_booking_path(@accessory), id:"show-bid-link"%></button>
+                <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Message', new_accessory_booking_path(@accessory), id:"show-bid-link"%></button>
                 <button class="btn btn-danger text-uppercase mr-2 px-4" ><%=link_to 'Buy Now', new_accessory_booking_path(@accessory), id:"show-bid-link"%></button>
 
                   <% if policy(@accessory).edit? %>
