@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
-    delete 'users/sign_out', to: 'devise/sessions#destroy'
+    get '/users/sign_out', to: 'devise/sessions#destroy'
   end
   root to: 'pages#home'
   get '/bookings/:id/accept', to: 'bookings#accept', as: 'accept'

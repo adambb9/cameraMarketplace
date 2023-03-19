@@ -53,9 +53,22 @@
 
         <%# If user not signed in show only login %>
         <% else %>
+          <li class="nav-item active btn btn-success">
+            <%= link_to "Sell", new_camera_path, id: "home-link" %>
+          </li>
+           <li class="nav-item">
+            <%= link_to "Products", cameras_path, id: "camera-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "How to Sell", how_it_works_path, id: "camera-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-secondary" %>
+          </li>
+
         <% end %>
       </ul>
     </div>
