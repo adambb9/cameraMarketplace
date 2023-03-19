@@ -1,14 +1,14 @@
-<%# Change all Camera to -> Accessory %>
 <div class="container mb-5">
   <div class="d-flex align-items-center justify-content-between column mb-3">
+    <%# Accessories Header & New Accessory Button %>
     <h3 class="mb-0" >Our Accesories</h3>
     <% if policy(Accessory).create? %>
       <%= link_to "Post a new accessory", new_accessory_path, class: "btn btn-warning" %>
     <% end %>
-
   </div>
   <div class="row my-2">
-      <% @accessories.each do |accessory| %>
+    <%# Product Cards - Styled same as cam - iterate over each lens producing each product card with respective img & info %>
+    <% @accessories.each do |accessory| %>
       <div class="col-12 col-sm-4 mb-4" id="camcards">
         <div class="bg-white rounded shadow h-100">
             <% accessory.photos.each do |photo| %>
@@ -22,9 +22,11 @@
             <% end %>
             <div class="p-3 rounded-bottom d-flex flex-column">
               <strong><%= accessory.make %></strong>
+              <i><%= accessory.category %></i>
+
               <div class="d-flex align-items-end justify-content-between pt-4">
                 <p>€<%= accessory.price %>0</p>
-                <small class="text-right flex-shrink-0"><%= link_to "See more", accessory_path(accessory), class: 'text-danger' %></small>
+                <small class="text-right flex-shrink-0"><%= link_to "View", accessory_path(accessory), class: 'btn btn-warning' %></small>
               </div>
             </div>
           </div>

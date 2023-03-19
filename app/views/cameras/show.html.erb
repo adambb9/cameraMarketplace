@@ -2,49 +2,62 @@
   <div class="row d-flex justify-content-center">
     <div class="col-md-20">
       <div class="col-md-20">
+
+        <%# Card %>
         <div class="cam-card">
           <div class="row">
             <div class="col-md-6">
-
+              <%# Card Image %>
               <div class="images p-3">
                 <% @camera.photos.each do |photo| %>
                   <% if photo == @camera.photos.first %>
                     <div class="text-center p-4">
-                      <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fit %>
+                      <%= cl_image_tag photo.key, height: 500, width: 600, class: "imageProduct", crop: :fit %>
                     </div>
                   <% end %>
                 <% end %>
               </div>
-
             </div>
-          <div class="col-md-6">
-            <div class="product">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span class="ml-1"><%= link_to 'Go Back', cameras_path, id:"show-back-link" %></span> </div> <i class="fa fa-shopping-cart text-muted"></i>
+
+            <div class="col-md-6">
+
+              <%# Product information %>
+              <div class="product">
+                  <div class="d-flex justify-content-between align-items-center">
+                      <div class="d-flex align-items-center">
+                        <i class="fa fa-long-arrow-left"></i>
+                        <span class="ml-1"><%= link_to 'Go Back', cameras_path, id:"show-back-link" %></span>
                       </div>
-                      <div class="infobox"> <span class="text-uppercase text-muted brand" id="make"><%= @camera.make %></span>
-                        <h5 class="text-uppercase" id="model" ><%= @camera.model %></h5>
-                        <%= @camera.category %>
-                        </div>
-
-                        <div clas= "moreinfo">
-                        <span class="act-price">PRICE: <%= @camera.price %> €</span>
-                            <div class="ml-2" id="condition"> Condition: <%= @camera.condition %></div>
-                            <div class="ml-2"> Year: <%= @camera.year %></div>
-                            <div class="ml-2" id="seller"> Seller: <%= @camera.user.first_name %></div>
-                          </div>
-                              <div class= "buttons-card">
-                            <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Create New Offer', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
-                          <% if policy(@camera).edit? %>
-                            <small class="text-right flex-shrink-0"><%= link_to "Edit camera", edit_camera_path(@camera), class: "btn btn-dark"  %></small>
-                          <% end %>
-                          <% if policy(@camera).destroy? %>
-                            <small class="text-right flex-shrink-0"><%= link_to  "Delete camera", camera_path(@camera), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></small>
-                          <% end %>
-                          </div>
                     </div>
-                </div>
+
+                  <div class="infobox"> <span class="text-uppercase text-muted brand" id="make"><%= @camera.make %></span>
+                    <h5 class="text-uppercase" id="model" ><%= @camera.model %></h5>
+                    <%= @camera.category %>
+                  </div>
+
+                  <div class= "moreinfo">
+                    <span class="act-price">PRICE: <%= @camera.price %> €</span>
+                    <div class="ml-2" id="condition"> Condition: <%= @camera.condition %></div>
+                    <div class="ml-2"> Year: <%= @camera.year %></div>
+                    <div class="ml-2" id="seller"> Seller: <%= @camera.user.first_name %></div>
+                  </div>
+                        <%# Missing description! %>
+
+                <%# Buttons %>
+                <div class= "buttons-card">
+                  <button class="btn btn-dark text-uppercase mr-2 px-4" ><%=link_to 'Offer', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
+                  <button class="btn btn-danger text-uppercase mr-2 px-4" ><%=link_to 'Buy Now', new_camera_booking_path(@camera), id:"show-bid-link"%></button>
+
+                    <% if policy(@camera).edit? %>
+                      <small class="text-right flex-shrink-0"><%= link_to "Edit camera", edit_camera_path(@camera), class: "btn btn-dark"  %></small>
+                    <% end %>
+                    <% if policy(@camera).destroy? %>
+                      <small class="text-right flex-shrink-0"><%= link_to  "Delete camera", camera_path(@camera), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></small>
+                    <% end %>
+               </div>
             </div>
-        </div>
+          </div>
+      </div>
     </div>
+  </div>
 </div>

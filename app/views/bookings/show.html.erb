@@ -1,44 +1,52 @@
 <div class="container mt-2 mb-5">
     <div class="row d-flex justify-content-center">
         <div class="col-md-10">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-6">
-              <div class="images p-3">
-                <% @booking.camera.photos.each do |photo| %>
-                  <% if photo == @booking.camera.photos.first %>
-                    <div class="text-center p-4">
-                      <%= cl_image_tag photo.key, height: 450, width: 450, crop: :fill %>
-                    </div>
+          <%# Booking product card %>
+          <div class="card">
+            <div class="row">
+              <%# Booking Image %>
+              <div class="col-md-6">
+                <div class="images p-3">
+                  <% @booking.camera.photos.each do |photo| %>
+                    <% if photo == @booking.camera.photos.first %>
+                      <div class="text-center p-4">
+                        <%= cl_image_tag photo.key, height: 450, width: 450, crop: :fill %>
+                      </div>
+                    <% end %>
                   <% end %>
-                <% end %>
+                </div>
               </div>
-            </div>
-                    <div class="col-md-6">
-                        <div class="product p-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i>   <%= link_to "Back", bookings_path, id: "bookingLinkBack" %> </div> <i class="fa fa-shopping-cart text-muted"></i>
-                            </div>
-                            <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><%= @booking.camera.make %></span>
-                                <h5 class="text-uppercase"><%= @booking.camera.model %></h5>
-                                <div class="price d-flex flex-column align-items-left">
-                                  <h5 class="act-price">Bid: <%= @booking.bid %> € </h5>
-                                  <h5 class="act-price"> PRICE: <%= @booking.camera.price %> €</h5>
-                                  <h5 class="ml-2"> Condition: <%= @booking.camera.condition %></h5>
-                                  <h5 class="ml-2"> Year: <%= @booking.camera.year %> </h5>
-                                  <h5 class="userOwner"> Owner: <%= @booking.camera.user.first_name %></h5>
 
-                                </div>
-                            </div>
-                              <p class="about">Seller: <%= @booking.camera.user.first_name %> <%= @booking.camera.user.last_name %></p>
-                              <p class="about">Buyer: <%= @booking.user.first_name %> <%=@booking.user.last_name %></p>
-                              <p class="about">Status: <%= @booking.status %></p>
-                              <p class="about">Comment: <%= @booking.comment %></p>
-                              <% if @booking.camera.user == current_user %>
-                                <small class="text-right flex-shrink-0"><%= link_to "✅", accept_path(@booking) %></small>
-                                <small class="text-right flex-shrink-0"><%= link_to "❌", reject_path(@booking) %></small>
-                              <% end %>
-            </div>
-        </div>
+            <%# Booking Information (Good to display Product & User info ie user avg review / rating) %>
+            <div class="col-md-6">
+              <div class="product p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <%= link_to "Back", bookings_path, id: "bookingLinkBack" %> </div>
+                </div>
+
+                <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><%= @booking.camera.make %></span>
+                  <h5 class="text-uppercase"><%= @booking.camera.model %></h5>
+
+                  <div class="price d-flex flex-column align-items-left">
+                    <h5 class="act-price">Bid: <%= @booking.bid %> € </h5>
+                    <h5 class="act-price"> PRICE: <%= @booking.camera.price %> €</h5>
+                    <h5 class="ml-2"> Condition: <%= @booking.camera.condition %></h5>
+                    <h5 class="ml-2"> Year: <%= @booking.camera.year %> </h5>
+                    <h5 class="userOwner"> Owner: <%= @booking.camera.user.first_name %></h5>
+                  </div>
+                </div>
+
+                <p class="about">Seller: <%= @booking.camera.user.first_name %> <%= @booking.camera.user.last_name %></p>
+                <p class="about">Buyer: <%= @booking.user.first_name %> <%=@booking.user.last_name %></p>
+                <p class="about">Status: <%= @booking.status %></p>
+                <p class="about">Comment: <%= @booking.comment %></p>
+
+                  <%# Accept or decline Booking btns (Mock) %>
+                  <% if @booking.camera.user == current_user %>
+                    <small class="text-right flex-shrink-0"><%= link_to "✅", accept_path(@booking) %></small>
+                    <small class="text-right flex-shrink-0"><%= link_to "❌", reject_path(@booking) %></small>
+                  <% end %>
+              </div>
+          </div>
     </div>
 </div>

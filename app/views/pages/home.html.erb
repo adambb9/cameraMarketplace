@@ -1,14 +1,14 @@
-
+<%# Stock Background Image %>
 <div class="banner" id="mainimg" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dpauqhmri/image/upload/v1645803289/sellcameras_1_tchohh.jpg);">
   <div class="container home" id= "header_front">
+
+    <%# titles %>
     <div class ="hometitles">
-    <h1>Camera's, lens's and accessories</h1>
-    <p>Explore our range of new and used products</p>
+      <h1>Camera's, lens's and accessories</h1>
+      <p>Explore our range of new and used products</p>
     </div>
 
-    <%# <div class= "box"></div>
-    <div class= "box1"></div> %>
-
+    <%# buttons %>
     <div class="buttons">
       <div class="areas">
         <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Cameras", cameras_path, id: "back-link", class: "backlink" %></button>
@@ -16,13 +16,73 @@
         <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Lenses", lenses_path, id: "back-link", class: "backlink" %></button>
       </div>
 
+    <%# if new user show signup button %>
       <% if user_signed_in? %>
           <div></div>
         <% else %>
-          <div class="signUp">
+          <div class="signUp" style="margin-bottom: 1.5em;">
             <button class="btn btn-flat text-uppercase mr-2 px-4" ><%= link_to "Sign up", new_user_registration_path, id: "booking-link" %></button>
           </div>
         <% end %>
+    </div>
+
+    <%# Carousel-featured products %>
+    <div class ="container featuredTitle">
+      <p class="titleTextFeat">Today's Featured Product's</p>
+    </div>
+
+    <div class="container" style="width: 800px; height: 400px;">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://cdn.bestadvisor.com/reviews/13/51/1351277a7559422760bd8966656a4183.jpg" class="d-block w-100" alt="Slide 1">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Panasonic HCX-1000 4k</h5>
+              <h5>Used Twice</h5>
+              <p>$999.99</p>
+              <button class="btn btn-success featuredBuyNow">Buy Now</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.bestadvisor.com/reviews/c3/9e/c39e034df5c76d2be07bb16388379f66.jpg" class="d-block w-100" alt="Slide 2">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Panasonic HC-WXF990M 4k</h5>
+              <h5>Brand New</h5>
+              <p>$499.99</p>
+              <button class="btn btn-success featuredBuyNow">Buy Now</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://gumtreeau-res.cloudinary.com/image/private/t_$_20/gumtree/dbf07d17-3bad-4eed-bdb0-8eb76d8a5de8.jpg" class="d-block w-100" alt="Slide 3">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sony HVR-V1E HDV</h5>
+              <h5>Used with care</h5>
+              <p>$1499.99</p>
+              <button class="btn btn-success featuredBuyNow">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+    </div>
+    <div class="container searchByCam">
+      <div class="search-bar" >
+        <input type="text" placeholder="Search Products by camera model...">
+        <button>Search</button>
+        <div class="autocomplete"></div>
+      </div>
     </div>
 
   </div>

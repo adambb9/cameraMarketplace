@@ -1,5 +1,5 @@
 class Lense < ApplicationRecord
-  CATEGORIES = ["DSLR", "Mirrorless", "Video Camera Tape", "Video Camera HD", "Drones", "Analog", "360 degrees", "Waterproof", "Instant", "Handy Cam", "Smartphone", "Other" ]
+  CATEGORIES = ["DSLR", "Mirrorless", "Video Camera", "Drones", "Analog", "360 degrees", "Waterproof", "Instant", "Handy Cam", "Smartphone", "Other" ]
   CONDITIONS = ["brand new", "slightly used", "used", "slight cosmetic damage", "bad cosmetic damage", "in need of repair", "non-functional" ]
   LENS_TYPES = ["Standard", "Wide Angle", "Fisheye", "Long Lens & Telephoto", "Zoom", "Macro", "Adapter", "Other" ]
   LENS_MOUNTS = ["Thread", "Quick mount", "Bayonet mount", "Canon EOS lenses", "Micro Four Thirds mount", "A-Mount", "E-Mount", "EF-Mount", "PL-Mount", "F-Mount", "G-Mount", "T-Mount", "RF-Mount", "L-Mount", "M39-Mount", "M42-Mount", "M43-Mount", "X-Mount", "Z-Mount", "Magnetic", "Other" ]
@@ -18,7 +18,7 @@ class Lense < ApplicationRecord
   validates :description, length: { minimum: 50 }
 
   include PgSearch::Model
-  pg_search_scope :search_by_category_make_lens_type_diameter_lens_mountprice_and_condition,
+  pg_search_scope :search_by_category_make_lens_type_diameter_lens_mount_price_and_condition,
     against: [ :category, :make, :lens_type, :diameter, :lens_mount, :price, :condition ],
     using: {
       tsearch: { prefix: true }

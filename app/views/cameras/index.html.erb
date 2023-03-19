@@ -1,13 +1,23 @@
 <div class="container mb-5">
+  <div class="d-flex align-items-left">
+      <button class="btn btn-dark"><%= link_to "Lenses", lenses_path, id: "camera-link" %></button>
+      <button class="btn btn-dark" style="margin-left:1em;"><%= link_to "Accessories", accessories_path, id: "camera-link" %></button>
+    </div>
+
+
+  <%# Accessories Header & New Accessory Button %>
   <div class="d-flex align-items-center justify-content-between column mb-3">
+
+
     <h3 class="mb-0" >Our Cameras</h3>
     <% if policy(Camera).create? %>
       <%= link_to "Post a new camera", new_camera_path, class: "btn btn-warning" %>
     <% end %>
-
   </div>
+
+  <%# Product Cards - Styled same as cam - iterate over each lens producing each product card with respective img & info %>
   <div class="row my-2">
-      <% @cameras.each do |camera| %>
+    <% @cameras.each do |camera| %>
       <div class="col-12 col-sm-4 mb-4" id="camcards">
         <div class="bg-white rounded shadow h-100">
             <% camera.photos.each do |photo| %>
@@ -21,10 +31,10 @@
             <% end %>
             <div class="p-3 rounded-bottom d-flex flex-column">
               <strong><%= camera.make %></strong>
-              <p><%= camera.model %></p>
+              <i><p><%= camera.model %></p></i>
               <div class="d-flex align-items-end justify-content-between pt-4">
                 <p>€<%= camera.price %>0</p>
-                <small class="text-right flex-shrink-0"><%= link_to "See more", camera_path(camera), class: 'text-danger' %></small>
+                <small class="text-right flex-shrink-0"><%= link_to "View", camera_path(camera), class: 'btn btn-warning' %></small>
               </div>
             </div>
           </div>

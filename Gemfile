@@ -40,6 +40,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'jquery-rails'
+
 # gem 'stimulus-rails'
 
 group :development, :test do

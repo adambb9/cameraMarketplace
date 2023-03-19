@@ -1,15 +1,12 @@
-<%#
-Change image to -> lenses
-lense (lenses - lense)
-%>
 <div class="container mb-5">
   <div class="d-flex align-items-center justify-content-between column mb-3">
+  <%# Page Header %>
     <h3 class="mb-0" >Our Lenses</h3>
     <% if policy(Lense).create? %>
       <%= link_to "Post a new lens", new_lense_path, class: "btn btn-warning" %>
     <% end %>
-
   </div>
+  <%# Product Cards - Styled same as cam - iterate over each lens producing each product card with respective img & info %>
   <div class="row my-2">
       <% @lenses.each do |lense| %>
       <div class="col-12 col-sm-4 mb-4" id="camcards">
@@ -24,12 +21,11 @@ lense (lenses - lense)
               <% end %>
             <% end %>
             <div class="p-3 rounded-bottom d-flex flex-column">
-              <strong><%= lense.make %></strong>
-              <strong><%= lense.lens_type %></strong>
+              <strong><%= lense.make %> <%= lense.lens_type %></strong>
               <strong><%= lense.lens_mount %></strong> (<%= lense.diameter %>mm)
               <div class="d-flex align-items-end justify-content-between pt-4">
                 <p>€<%= lense.price %>0</p>
-                <small class="text-right flex-shrink-0"><%= link_to "See more", lense_path(lense), class: 'text-danger' %></small>
+                <small class="text-right flex-shrink-0"><%= link_to "View", lense_path(lense), class: 'btn btn-warning' %></small>
               </div>
             </div>
           </div>

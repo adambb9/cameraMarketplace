@@ -1,3 +1,50 @@
+<%# Dashboard Area %>
+<div class=container>
+  <h2 class="profileBanner">Profile</h2>
+  <hr>
+  <div class="userInfo">
+    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    <h3 id="username">username</h3>
+    <div class="row container userStats">
+      <table class="statsTable">
+        <thead>
+          <tr>
+            <th>Followers</th>
+            <th>Following</th>
+            <th>Transactions</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>399</td>
+            <td>95</td>
+            <td>55</td>
+            <td>4.9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <h4 class=" infoHeader">My Information</h4>
+      <h6>Professional Photographer looking to buy and sell gear, located in Spain and ready to ship!</h6>
+      <div class="row justify-content-center">
+        <div class="row userBtns col-6">
+          <button class="flex-shrink-0 btn btn-dark profileBtn">Edit Profile</button>
+          <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Addresses</button>
+          <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Payments</button>
+          <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Followers/Following</button>
+          <button class="flex-shrink-0 btn btn-dark profileBtn">See Orders</button>
+        </div>
+        <div class="helpBtns">
+          <button class="flex-shrink-0 btn btn-success helpBtn">Customer Support</button>
+          <button class="flex-shrink-0 btn btn-warning helpBtn">Report User</button>
+        </div>
+    </div>
+    <hr>
+  </div>
+</div>
+
+<%# Dashboard Tabs %>
 <div class="warpper">
   <input class="radio" id="one" name="group" type="radio" checked>
   <input class="radio" id="two" name="group" type="radio">
@@ -5,88 +52,93 @@
   <input class="radio" id="four" name="group" type="radio">
 
   <div class="tabs">
-  <label class="tab" id="one-tab" for="one">My Watchlist</label>
-  <label class="tab" id="two-tab" for="two">Your Offers</label>
-  <label class="tab" id="three-tab" for="three">My Camera(s)</label>
-  <label class="tab" id="four-tab" for="four">Messages</label>
-    </div>
-  <div class="panels">
+    <label class="tab" id="one-tab" for="one">My Watchlist</label>
+    <label class="tab" id="two-tab" for="two">Your Offer(s)</label>
+    <label class="tab" id="three-tab" for="three">My Product(s)</label>
+    <label class="tab" id="four-tab" for="four">Messages</label>
+  </div>
 
+  <%# Respective Panels For Tabs %>
+  <div class="panels">
+    <%# Watchlist Panel (Users bookings placed on products he wants to buy) - iterate over -> create respective card with photo, status, comment and price %>
     <div class="panel" id="one-panel">
       <div class="panel-title">My Watchlist</div>
-    <div class="row my-2">
-      <h1> <% @send_bookings %> </h1>
-        <% if @send_bookings.empty? %>
-          <h6>You haven't made any offers yet</h6>
-          <% else %>
-      <% @send_bookings.each do |camera| %>
-        <% camera_id = camera.camera_id%>
-          <% camera1 = Camera.find(camera_id) %>
-            <div class="col-12 col-sm-4 mb-4" id="camcards">
-              <div class="bg-white rounded shadow h-100">
-                <% if camera1.photos.empty? %>
-                    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
-                <% else %>
-                  <% camera1.photos.each do |photo| %>
-                    <% if photo == camera1.photos.first %>
-                      <%= cl_image_tag photo.key, class:"camera-img rounded-top" %>
+      <div class="row my-2">
+        <h1> <% @send_bookings %> </h1>
+          <% if @send_bookings.empty? %>
+            <h6>You haven't made any offers yet</h6>
+            <% else %>
+        <% @send_bookings.each do |camera| %>
+          <% camera_id = camera.camera_id%>
+            <% camera1 = Camera.find(camera_id) %>
+              <div class="col-12 col-sm-4 mb-4" id="camcards">
+                <div class="bg-white rounded shadow h-100">
+                  <% if camera1.photos.empty? %>
+                      <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
+                  <% else %>
+                    <% camera1.photos.each do |photo| %>
+                      <% if photo == camera1.photos.first %>
+                        <%= cl_image_tag photo.key, class:"camera-img rounded-top" %>
+                      <% end %>
                     <% end %>
                   <% end %>
-                <% end %>
-                  <div class="p-3 rounded-bottom d-flex flex-column">
-                    <strong><%= camera.status %></strong>
-                    <p><%= camera.comment %></p>
-                    <div class="d-flex align-items-end justify-content-between pt-4">
-                      <p>€<%= camera.bid %></p>
+                    <div class="p-3 rounded-bottom d-flex flex-column">
+                      <strong><%= camera.status %></strong>
+                      <p><%= camera.comment %></p>
+                      <div class="d-flex align-items-end justify-content-between pt-4">
+                        <p>€<%= camera.bid %></p>
+                      </div>
+                      <small class="text-right flex-shrink-0"><%= link_to "See booking", booking_path(camera) %></small>
                     </div>
-                    <small class="text-right flex-shrink-0"><%= link_to "See booking", booking_path(camera) %></small>
-                  </div>
                 </div>
               </div>
-              <% end %>
             <% end %>
+          <% end %>
       </div>
     </div>
 
-
+    <%# Your Offers Panel (Users recieved booking requests -> on the products he has uploaded for sale) - iterate over -> create respective card with photo, status, comment and price %>
     <div class="panel" id="two-panel">
-    <div class="panel-title">Your Offers</div>
-    <div class="row my-2">
-      <h1> <% @recieved_booking %> </h1>
-        <% if @recieved_booking.empty? %>
-          <h6>You haven't recieved any offers yet</h6>
+      <div class="panel-title">Your Offers</div>
+      <div class="row my-2">
+        <h1> <% @recieved_booking %> </h1>
+          <% if @recieved_booking.empty? %>
+            <h6>You haven't recieved any offers yet</h6>
           <% else %>
-      <% @recieved_booking.each do |camera| %>
-        <% camera_id = camera.camera_id%>
-          <% camera1 = Camera.find(camera_id) %>
-            <div class="col-12 col-sm-4 mb-4">
-              <div class="bg-white rounded shadow h-100">
-                <% if camera1.photos.empty? %>
-                    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
-                <% else %>
-                  <% camera1.photos.each do |photo| %>
-                    <% if photo == camera1.photos.first %>
-                      <%= cl_image_tag photo.key, class:"camera-img rounded-top" %>
+            <% @recieved_booking.each do |camera| %>
+              <% camera_id = camera.camera_id%>
+              <% camera1 = Camera.find(camera_id) %>
+                <div class="col-12 col-sm-4 mb-4">
+                  <div class="bg-white rounded shadow h-100">
+                    <% if camera1.photos.empty? %>
+                      <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
+                    <% else %>
+                      <% camera1.photos.each do |photo| %>
+                        <% if photo == camera1.photos.first %>
+                          <%= cl_image_tag photo.key, class:"camera-img rounded-top" %>
+                        <% end %>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                <% end %>
-                  <div class="p-3 rounded-bottom d-flex flex-column">
-                    <strong><%= camera.status %></strong>
-                    <p><%= camera.comment %></p>
-                    <div class="d-flex align-items-end justify-content-between pt-4">
-                      <p>€<%= camera.bid %></p>
-                    </div>
-                    <small class="text-right flex-shrink-0"><%= link_to "See booking", booking_path(camera) %></small>
-                  </div>
-                </div>
-              </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+              <div class="p-3 rounded-bottom d-flex flex-column">
+                <strong><%= camera.status %></strong>
+                <p><%= camera.comment %></p>
 
+                <div class="d-flex align-items-end justify-content-between pt-4">
+                  <p>€<%= camera.bid %></p>
+                </div>
+
+                <small class="text-right flex-shrink-0"><%= link_to "See booking", booking_path(camera) %></small>
+              </div>
+            </div>
+          </div>
+        <% end %>
+       <% end %>
+     </div>
+  </div>
+
+    <%# My Products section (Currently only shows Cameras not users accessories & lenses) - iterate over -> create respective card with photo, status, comment and price %>
     <div class="panel" id="three-panel">
-      <div class="panel-title">My Cameras</div>
+      <div class="panel-title">My Products</div>
         <div class="row my-2">
           <% @cameras.each do |camera| %>
           <div class="col-12 col-sm-4 mb-4" id="camcards">
@@ -114,9 +166,76 @@
         </div>
       </div>
 
+      <%# Empty Messaging Section - List of all messages on inital enter -> ability to navigate to single conversations on instance of product %>
       <div class="panel" id="four-panel">
-    <div class="panel-title">Messages</div>
-      <p>Comin soon</p>
-    </div>
+        <div class="panel-title">Messages</div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-2 chat-sidebar">
+                <ul class="list-unstyled">
+                  <li class="active"><a href="#">Sony VX1000</a></li>
+                  <li><a href="#">VX2000 New With Box</a></li>
+                  <li><a href="#">Used Century 72mm Lens</a></li>
+                  <li><a href="#">Opteka 82mm Lens Used</a></li>
+                </ul>
+              </div>
+            <div class="col-md-10 chat-window">
+              <div class="row">
+                <div class="col-md-12 chat-header">
+                  <h2>Sony VX1000 Used</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 chat-messages">
+                  <div class="message">
+                    <div class="message-author">
+                      <span class="author-name">user23</span>
+                      <span class="time">10:00am</span>
+                    </div>
+                    <div class="message-text">
+                      Hey, could you do 3fiddy for this? I like it a lot!
+                    </div>
+                  </div>
+                  <div class="col-md-12 chat-messages">
+                  <div class="message">
+                    <div class="message-author">
+                      <span class="author-name">user23</span>
+                      <span class="time">10:00am</span>
+                    </div>
+                    <div class="message-text offerMsg">
+                      Offer sent: 350€
+                      <div class="offer-buttons">
+                        <button class="btn btn-dark accept-button">Accept</button>
+                        <button class="btn btn-dark decline-button">Decline</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="message">
+                    <div class="message-author">
+                      <span class="author-name">JohnDoe22</span>
+                      <span class="time">10:05am</span>
+                    </div>
+                    <div class="message-text">
+                      Yeah, minimum I could do is 350+shipping for the camera. Lmk what you think, its still in great nick!
+                    </div>
+                  </div>
+                  <!-- more messages here -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 chat-input">
+                  <form>
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="Type your message here"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Offer</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
