@@ -14,20 +14,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, id: "home-link" %>
+          <li class="nav-item active btn btn-success">
+            <%= link_to "Sell", new_camera_path, id: "home-link" %>
           </li>
            <li class="nav-item">
-            <%= link_to "Cameras", cameras_path, id: "camera-link" %>
+            <%= link_to "Products", cameras_path, id: "camera-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Lenses", lenses_path, id: "camera-link" %>
+            <%= link_to "How to Sell", how_it_works_path, id: "camera-link" %>
           </li>
            <li class="nav-item">
-            <%= link_to "Accessories", accessories_path, id: "camera-link" %>
+            <%= link_to "Favourites", bookings_path(anchor: 'four-tab'), id: "camera-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My Area", bookings_path, id: "booking-link" %>
+            <%= link_to "Profile", bookings_path, id: "booking-link" %>
           </li>
           <div class="navbar-search">
             <div class="row"></div>
@@ -45,7 +45,7 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://avatars.githubusercontent.com/u/95916189?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Messages", root_path, id: "home-link", class: "dropdown-item" %>
+              <%= link_to "Messages", bookings_path(anchor: 'four-tab'), id: "home-link", class: "dropdown-item" %>
               <%= link_to "Profile Settings", bookings_path, id: "booking-link", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>

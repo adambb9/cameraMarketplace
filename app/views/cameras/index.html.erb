@@ -1,7 +1,14 @@
 <div class="container mb-5">
+  <div class="d-flex align-items-left">
+      <button class="btn btn-dark"><%= link_to "Lenses", lenses_path, id: "camera-link" %></button>
+      <button class="btn btn-dark" style="margin-left:1em;"><%= link_to "Accessories", accessories_path, id: "camera-link" %></button>
+    </div>
+
 
   <%# Accessories Header & New Accessory Button %>
   <div class="d-flex align-items-center justify-content-between column mb-3">
+
+
     <h3 class="mb-0" >Our Cameras</h3>
     <% if policy(Camera).create? %>
       <%= link_to "Post a new camera", new_camera_path, class: "btn btn-warning" %>
