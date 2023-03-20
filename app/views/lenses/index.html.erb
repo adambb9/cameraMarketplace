@@ -36,7 +36,7 @@
 
           <h5 class="card-title" style="margin-top:0.9em;">Condition:</h5>
           <%= form_tag do %>
-            <%= select_tag :category, options_for_select(Lense::CONDITIONS) %>
+            <%= select_tag :category, options_for_select(Lense::CONDITIONS), prompt: 'Select' %>
           <% end %>
         </div>
       </div>

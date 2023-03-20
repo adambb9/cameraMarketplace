@@ -1,6 +1,6 @@
 class Camera < ApplicationRecord
   CATEGORIES = ["DSLR", "Mirrorless", "Video Camera Tape", "Video Camera HD", "Video Camera 4K", "Action Cams", "Drones", "Analog", "360 degrees", "Waterproof", "Instant", "Handy Cam", "Handy Cam Tape",  ]
-  CONDITIONS = ["Select", "brand new", "slightly used", "used", "slight cosmetic damage", "bad cosmetic damage", "in need of repair", "non-functional" ]
+  CONDITIONS = ["brand new", "slightly used", "used", "slight cosmetic damage", "bad cosmetic damage", "in need of repair", "non-functional" ]
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many_attached :photos
