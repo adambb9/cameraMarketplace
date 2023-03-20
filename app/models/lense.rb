@@ -1,6 +1,6 @@
 class Lense < ApplicationRecord
   CATEGORIES = ["DSLR", "Mirrorless", "Video Camera", "Drones", "Analog", "360 degrees", "Waterproof", "Instant", "Handy Cam", "Smartphone", "Other" ]
-  CONDITIONS = ["", "brand new", "slightly used", "used", "slight cosmetic damage", "bad cosmetic damage", "in need of repair", "non-functional" ]
+  CONDITIONS = ["Select", "brand new", "slightly used", "used", "slight cosmetic damage", "bad cosmetic damage", "in need of repair", "non-functional" ]
   LENS_TYPES = ["Standard", "Wide Angle", "Fisheye", "Long Lens & Telephoto", "Zoom", "Macro", "Adapter", "Other" ]
   LENS_MOUNTS = ["Thread", "Quick mount", "Bayonet mount", "Canon EOS lenses", "Micro Four Thirds mount", "A-Mount", "E-Mount", "EF-Mount", "PL-Mount", "F-Mount", "G-Mount", "T-Mount", "RF-Mount", "L-Mount", "M39-Mount", "M42-Mount", "M43-Mount", "X-Mount", "Z-Mount", "Magnetic", "Other" ]
   DIAMETERS = [0.0, 25.0, 27.0, 28.0, 30.0, 30.5, 37.0, 39.0, 40.0, 40.5, 43.0, 46.0, 49.0, 52.0, 55.0, 58.0, 60.0, 62.0, 67.0, 72.0, 77.0, 82.0, 86.0, 95.0, 102.0, 105.0]
