@@ -1,4 +1,48 @@
 <div class="container mb-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title"><%= @lenses.count %> products</p>
+          <h5 class="card-title">Filter By:</h5>
+          <div class="d-flex flex-column">
+            <div class="mb-2">
+              <button class="btn btn-warning"><%= link_to "Accessories", accessories_path, class:"btn btn-warning" %></button>
+            </div>
+            <div>
+              <button class="btn btn-warning"><%= link_to "Cameras", cameras_path, class:"btn btn-warning" %></button>
+            </div>
+          </div>
+          <%# Filter Dropdowns %>
+          <h5 class="card-title" style="margin-top:0.9em;">Category:</h5>
+          <%= form_tag do %>
+            <%= select_tag :category, options_for_select(Lense::CATEGORIES) %>
+          <% end %>
+
+          <h5 class="card-title" style="margin-top:0.9em;">Lens Type:</h5>
+          <%= form_tag do %>
+            <%= select_tag :category, options_for_select(Lense::LENS_TYPES) %>
+          <% end %>
+
+          <h5 class="card-title" style="margin-top:0.9em;">Lens Type:</h5>
+          <%= form_tag do %>
+            <%= select_tag :category, options_for_select(Lense::LENS_MOUNTS) %>
+          <% end %>
+
+          <h5 class="card-title" style="margin-top:0.9em;">Lens Diameter(mm):</h5>
+          <%= form_tag do %>
+            <%= select_tag :category, options_for_select(Lense::DIAMETERS) %>
+          <% end %>
+
+          <h5 class="card-title" style="margin-top:0.9em;">Condition:</h5>
+          <%= form_tag do %>
+            <%= select_tag :category, options_for_select(Lense::CONDITIONS) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+
   <div class="d-flex align-items-center justify-content-between column mb-3">
   <%# Page Header %>
     <h3 class="mb-0" >Our Lenses</h3>

@@ -1,5 +1,14 @@
 <div class="containerForm">
-  <h1>Add your Accessory</h1>
+  <h1>Add your Products</h1>
+  <div>
+    <h6>Type:</h6>
+    <%= link_to "Post a new camera", new_camera_path, class: "btn btn-warning" %>
+    <%= link_to "Post a new accessory", new_accessory_path, class: "btn btn-warning" %>
+    <%= link_to "Post a new lens", new_lense_path, class: "btn btn-warning" %>
+  </div>
+
+  <h2>Your Accessory Specifications:</h2>
+
   <%# New Accessory simpleform %>
   <div class="row">
     <div class="col-6-sm">
