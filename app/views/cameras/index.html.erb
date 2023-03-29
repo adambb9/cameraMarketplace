@@ -7,10 +7,48 @@
           <h5 class="card-title">Filter By:</h5>
           <div class="d-flex flex-column">
             <div class="mb-2">
-              <button class="btn btn-warning"><%= link_to "Accessories", accessories_path, class:"btn btn-warning" %></button>
-            </div>
-            <div>
-              <button class="btn btn-warning"><%= link_to "Lenses", lenses_path, class:"btn btn-warning" %></button>
+              <%= form_tag url_for, method: :get do %>
+                <div class="form-check">
+                  <%= check_box_tag :with_cameras, true, false, id: "cameras-checkbox", class: "form-check-input" %>
+                  <%= label_tag :with_cameras, "Cameras", class: "form-check-label" %>
+                </div>
+
+                <div class="form-check">
+                  <%= check_box_tag :with_accessories, true, false, id: "accessories-checkbox", class: "form-check-input" %>
+                  <%= label_tag :with_accessories, "Accessories", class: "form-check-label" %>
+                </div>
+
+                <div class="form-check">
+                  <%= check_box_tag :with_lenses, true, false, id: "lenses-checkbox", class: "form-check-input" %>
+                  <%= label_tag :with_lenses, "Lenses", class: "form-check-label" %>
+                </div>
+              <% end %>
+
+              <script>
+                const accessoriesCheckbox = document.getElementById("accessories-checkbox");
+                accessoriesCheckbox.checked = window.location.pathname === "<%= accessories_path %>";
+                accessoriesCheckbox.addEventListener("change", (event) => {
+                  if (event.target.checked) {
+                    window.location.href = "<%= accessories_path %>";
+                  }
+                });
+
+                const camerasCheckbox = document.getElementById("cameras-checkbox");
+                camerasCheckbox.checked = window.location.pathname === "<%= cameras_path %>";
+                camerasCheckbox.addEventListener("change", (event) => {
+                  if (event.target.checked) {
+                    window.location.href = "<%= cameras_path %>";
+                  }
+                });
+
+                const lensesCheckbox = document.getElementById("lenses-checkbox");
+                lensesCheckbox.checked = window.location.pathname === "<%= lenses_path %>";
+                lensesCheckbox.addEventListener("change", (event) => {
+                  if (event.target.checked) {
+                    window.location.href = "<%= lenses_path %>";
+                  }
+                });
+            </script>
             </div>
           </div>
           <%# Filter Dropdowns %>
