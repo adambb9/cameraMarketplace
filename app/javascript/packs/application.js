@@ -14,4 +14,6 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+// require("controllers/checkboxes")
+
 // import 'swiper/css/bundle'

@@ -1,5 +1,5 @@
 class Accessory < ApplicationRecord
-  CATEGORIES = ["Lights", "Tripods", "Memory Cards", "Microphone", "Adapters", "Stabilizers", "Chargers", "Batteries","Bags", "Other" ]
+  CATEGORIES = ["Adapters", "Bags", "Batteries",  "Chargers", "Camera Lights", "Studio Lights", "Memory Cards", "Microphone", "Stabilizers", "Tripods", "Other" ]
   CONDITIONS = ["brand new", "slightly used", "used", "slight cosmetic damage", "bad cosmetic damage", "in need of repair", "non-functional" ]
   belongs_to :user
   # has_many :bookings, dependent: :destroy
