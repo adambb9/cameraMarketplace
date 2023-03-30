@@ -52,8 +52,8 @@
   <input class="radio" id="four" name="group" type="radio">
 
   <div class="tabs">
-    <label class="tab" id="one-tab" for="one">My Watchlist</label>
-    <label class="tab" id="two-tab" for="two">Your Offer(s)</label>
+    <label class="tab" id="one-tab" for="one">Your Placed Offers</label>
+    <label class="tab" id="two-tab" for="two">Accept/Decline Offers(s)</label>
     <label class="tab" id="three-tab" for="three">My Product(s)</label>
     <label class="tab" id="four-tab" for="four">Messages</label>
   </div>
@@ -62,7 +62,7 @@
   <div class="panels">
     <%# Watchlist Panel (Users bookings placed on products he wants to buy) - iterate over -> create respective card with photo, status, comment and price %>
     <div class="panel" id="one-panel">
-      <div class="panel-title">My Watchlist</div>
+      <div class="panel-title">My Offers</div>
       <div class="row my-2">
         <h1> <% @send_bookings %> </h1>
           <% if @send_bookings.empty? %>
@@ -99,7 +99,7 @@
 
     <%# Your Offers Panel (Users recieved booking requests -> on the products he has uploaded for sale) - iterate over -> create respective card with photo, status, comment and price %>
     <div class="panel" id="two-panel">
-      <div class="panel-title">Your Offers</div>
+      <div class="panel-title">Offers on your Products</div>
       <div class="row my-2">
         <h1> <% @recieved_booking %> </h1>
           <% if @recieved_booking.empty? %>

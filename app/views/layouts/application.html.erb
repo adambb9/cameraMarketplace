@@ -28,6 +28,31 @@
 
       <div class="main-container">
         <%= yield %>
+        <script>
+                const accessoriesCheckbox = document.getElementById("accessories-checkbox");
+                accessoriesCheckbox.checked = window.location.pathname === "<%= accessories_path %>";
+                accessoriesCheckbox.addEventListener("change", (event) => {
+                  if (event.target.checked) {
+                    window.location.href = "<%= accessories_path %>";
+                  }
+                });
+
+                const camerasCheckbox = document.getElementById("cameras-checkbox");
+                camerasCheckbox.checked = window.location.pathname === "<%= cameras_path %>";
+                camerasCheckbox.addEventListener("change", (event) => {
+                  if (event.target.checked) {
+                    window.location.href = "<%= cameras_path %>";
+                  }
+                });
+
+                const lensesCheckbox = document.getElementById("lenses-checkbox");
+                lensesCheckbox.checked = window.location.pathname === "<%= lenses_path %>";
+                lensesCheckbox.addEventListener("change", (event) => {
+                  if (event.target.checked) {
+                    window.location.href = "<%= lenses_path %>";
+                  }
+                });
+            </script>
       </div>
 
       <%= render 'shared/footer' %>

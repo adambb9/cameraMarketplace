@@ -33,6 +33,9 @@ const cameraModels = [
   "Panasonic AG-HPX370",
   "Panasonic AG-HPX300",
   "Panasonic AG-HMC40",
+  "Panasonic AG-HMC41",
+  "Panasonic AG-HMC 150",
+  "Panasonic AG-HMC 151",
   "Panasonic AG-HPX600",
   "Panasonic AG-PX800",
   "Panasonic AG-DVX200",
@@ -52,6 +55,7 @@ const cameraModels = [
   "Sony HVR-Z1",
   "Sony HVR-Z5",
   "Sony HDR-GW",
+  "Sony VX1000",
   "Sony VX2000/PD150",
   "Sony VX2100/PD170",
 ];
