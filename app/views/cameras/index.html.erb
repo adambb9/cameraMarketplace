@@ -64,7 +64,7 @@
   <div class="row my-2">
     <% @cameras.each do |camera| %>
       <div class="col-12 col-sm-4 mb-4" id="camcards">
-        <a href="<%= camera_path(camera) %>">
+        <a class="cardShowProd" href="<%= camera_path(camera) %>">
           <div class="bg-white rounded shadow h-100">
             <% camera.photos.each do |photo| %>
               <% if camera.photos.empty? %>

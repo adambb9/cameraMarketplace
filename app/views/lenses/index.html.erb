@@ -76,7 +76,7 @@
   <div class="row my-2">
       <% @lenses.each do |lense| %>
         <div class="col-12 col-sm-4 mb-4" id="camcards">
-          <a href="<%= lense_path(lense) %>">
+          <a class="cardShowProd" href="<%= lense_path(lense) %>">
             <div class="bg-white rounded shadow h-100">
               <% lense.photos.each do |photo| %>
                 <% if lense.photos.empty? %>
