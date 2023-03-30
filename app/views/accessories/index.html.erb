@@ -60,7 +60,8 @@
     <%# Product Cards - Styled same as cam - iterate over each lens producing each product card with respective img & info %>
     <% @accessories.each do |accessory| %>
       <div class="col-12 col-sm-4 mb-4" id="camcards">
-        <div class="bg-white rounded shadow h-100">
+        <a href="<%= accessory_path(accessory) %>">
+          <div class="bg-white rounded shadow h-100">
             <% accessory.photos.each do |photo| %>
               <% if accessory.photos.empty? %>
                 <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", class="camera-img rounded-top">
@@ -81,6 +82,7 @@
             </div>
           </div>
         </div>
-      <% end %>
+      </a>
+    <% end %>
   </div>
 </div>

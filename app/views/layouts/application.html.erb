@@ -15,7 +15,7 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
 
     <%# btstrap / jscript %>
-    <%# <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' %> %>
+    <%# <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' %>
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.6.0.min.js' %>
     <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js' %>
   </head>
@@ -28,31 +28,31 @@
 
       <div class="main-container">
         <%= yield %>
-        <script>
-                const accessoriesCheckbox = document.getElementById("accessories-checkbox");
-                accessoriesCheckbox.checked = window.location.pathname === "<%= accessories_path %>";
-                accessoriesCheckbox.addEventListener("change", (event) => {
-                  if (event.target.checked) {
-                    window.location.href = "<%= accessories_path %>";
-                  }
-                });
+          <script>
+            const accessoriesCheckbox = document.getElementById("accessories-checkbox");
+              accessoriesCheckbox.checked = window.location.pathname === "<%= accessories_path %>";
+              accessoriesCheckbox.addEventListener("change", (event) => {
+                if (event.target.checked) {
+                  window.location.href = "<%= accessories_path %>";
+                }
+              });
 
-                const camerasCheckbox = document.getElementById("cameras-checkbox");
-                camerasCheckbox.checked = window.location.pathname === "<%= cameras_path %>";
-                camerasCheckbox.addEventListener("change", (event) => {
-                  if (event.target.checked) {
-                    window.location.href = "<%= cameras_path %>";
-                  }
-                });
+              const camerasCheckbox = document.getElementById("cameras-checkbox");
+              camerasCheckbox.checked = window.location.pathname === "<%= cameras_path %>";
+              camerasCheckbox.addEventListener("change", (event) => {
+                if (event.target.checked) {
+                  window.location.href = "<%= cameras_path %>";
+                }
+              });
 
-                const lensesCheckbox = document.getElementById("lenses-checkbox");
-                lensesCheckbox.checked = window.location.pathname === "<%= lenses_path %>";
-                lensesCheckbox.addEventListener("change", (event) => {
-                  if (event.target.checked) {
-                    window.location.href = "<%= lenses_path %>";
-                  }
-                });
-            </script>
+              const lensesCheckbox = document.getElementById("lenses-checkbox");
+              lensesCheckbox.checked = window.location.pathname === "<%= lenses_path %>";
+              lensesCheckbox.addEventListener("change", (event) => {
+                if (event.target.checked) {
+                  window.location.href = "<%= lenses_path %>";
+                }
+              });
+          </script>
       </div>
 
       <%= render 'shared/footer' %>

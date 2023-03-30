@@ -86,3 +86,11 @@ searchButton.addEventListener("click", () => {
   const searchTerm = searchInput.value.toLowerCase();
   // Code to display search results
 });
+
+autocompleteDiv.addEventListener("click", (event) => {
+  if (event.target.classList.contains("autocomplete-item")) {
+    const selectedCameraModel = event.target.textContent;
+    searchInput.value = selectedCameraModel;
+    autocompleteDiv.innerHTML = "";
+  }
+});
