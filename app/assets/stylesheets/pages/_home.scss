@@ -160,16 +160,16 @@
 
 .search-bar input[type="text"] {
   padding: 10px;
-  border-radius: 5px 0 0 5px;
+  // border-radius: 5px 0 0 5px;
   border: none;
-  width: 300px;
+  width: 200px;
 }
 
 .search-bar button {
   padding: 10px 20px;
   border-radius: 0 5px 5px 0;
   border: none;
-  background-color: #2ecc71;
+  background-color: darkgray;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
@@ -185,8 +185,8 @@
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-top: none;
-  width: 300px;
-  max-height: 200px;
+  width: 200px;
+  max-height: 500px;
   overflow-y: auto;
   z-index: 1;
 }
