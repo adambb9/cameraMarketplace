@@ -54,13 +54,21 @@
           <%# Filter Dropdowns %>
           <h5 class="card-title" style="margin-top:0.9em;">Category:</h5>
           <%= form_tag do %>
-            <%= select_tag :category, options_for_select(Camera::CATEGORIES) %>
+            <%= select_tag :category, options_for_select(Camera::CATEGORIES), style:"width:-webkit-fill-available;"  %>
           <% end %>
 
           <h5 class="card-title" style="margin-top:0.9em;">Condition:</h5>
           <%= form_tag do %>
             <%= select_tag :category, options_for_select(Camera::CONDITIONS), prompt: 'Select' %>
           <% end %>
+
+          <h5 class="card-title" style="margin-top:0.9em;">Camera Model:</h5>
+
+            <div class="search-bar" >
+                <input style="width:200px;" type="text" placeholder="Search by camera model...">
+                <button class=“btn btn-dark”>Select</button>
+            <div style="border:hidden;" class="autocomplete"></div>
+            </div>
         </div>
       </div>
     </div>
