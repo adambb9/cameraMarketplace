@@ -1,0 +1,5 @@
+<%= simple_form_for @message do |f| %>
+  <%= f.input :content, input_html: { class: 'rich-text-area' } %>
+  <%= f.hidden_field :receiver_id, value: params[:receiver_id] %>
+  <%= f.submit "Send" %>
+<% end %>

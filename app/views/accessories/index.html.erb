@@ -11,21 +11,19 @@
           <div class="mb-2">
             <%= form_tag url_for, method: :get do %>
               <div class="form-check">
-                <%= check_box_tag :with_accessories, true, false, id: "accessories-checkbox", class: "form-check-input" %>
-                <%= label_tag :with_accessories, "Accessories", class: "form-check-label" %>
+                <%= link_to "Accessories", accessories_path, class: "form-check-label" %>
               </div>
 
               <div class="form-check">
-                <%= check_box_tag :with_cameras, true, false, id: "cameras-checkbox", class: "form-check-input" %>
-                <%= label_tag :with_cameras, "Cameras", class: "form-check-label" %>
+                <%= link_to "Cameras", cameras_path, class: "form-check-label" %>
               </div>
 
               <div class="form-check">
-                <%= check_box_tag :with_lenses, true, false, id: "lenses-checkbox", class: "form-check-input" %>
-                <%= label_tag :with_lenses, "Lenses", class: "form-check-label" %>
+                <%= link_to "Lenses", lenses_path, class: "form-check-label" %>
               </div>
             <% end %>
-            </div>
+          </div>
+
           </div>
           <%# Filter Dropdowns %>
           <h5 class="card-title" style="margin-top:0.9em;">Category:</h5>

@@ -27,5 +27,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [ :new, :create]
   end
   # resources :bookings, only: [ :index, :accept, :reject, :show, :edit, :update, :destroy ]
+  resources :messages
 
 end

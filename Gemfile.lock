@@ -273,6 +273,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actiontext (~> 6.1)
   autoprefixer-rails (= 10.2.5)
   bootsnap (>= 1.4.4)
   byebug

@@ -1,0 +1,11 @@
+<h1>Messages with <%= @receiver.name %></h1>
+
+<% @messages.each do |message| %>
+  <div class="message">
+    <p><%= message.created_at %></p>
+    <p><%= message.sender.name %>: </p>
+    <p><%= message.content %></p>
+  </div>
+<% end %>
+
+<%= link_to "New Message", new_message_path(receiver_id: @receiver.id) %>

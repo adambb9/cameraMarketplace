@@ -17,3 +17,6 @@ import "bootstrap"
 // require("controllers/checkboxes")
 
 // import 'swiper/css/bundle'
+
+require("trix")
+require("@rails/actiontext")
