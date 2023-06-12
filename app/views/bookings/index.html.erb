@@ -1,46 +1,51 @@
 <%# Dashboard Area %>
-<div class=container>
-  <h2 class="profileBanner">Profile</h2>
-  <hr>
-  <div class="userInfo">
-    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-    <h3 id="username">username</h3>
-    <div class="row container userStats">
-      <table class="statsTable">
-        <thead>
-          <tr>
-            <th>Followers</th>
-            <th>Following</th>
-            <th>Transactions</th>
-            <th>Rating</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>399</td>
-            <td>95</td>
-            <td>55</td>
-            <td>4.9</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  <h4 class=" infoHeader">My Information</h4>
-      <h6>Professional Photographer looking to buy and sell gear, located in Spain and ready to ship!</h6>
-      <div class="row justify-content-center">
-        <div class="row userBtns col-6">
-          <button class="flex-shrink-0 btn btn-dark profileBtn">Edit Profile</button>
-          <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Addresses</button>
-          <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Payments</button>
-          <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Followers/Following</button>
-          <button class="flex-shrink-0 btn btn-dark profileBtn">See Orders</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="profileBanner">Profile</h2>
+      <hr>
+      <div class="userInfo">
+        <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        <h3 id="username">username</h3>
+        <div class="userStats">
+          <table class="statsTable">
+            <thead>
+              <tr>
+                <th>Followers</th>
+                <th>Following</th>
+                <th>Transactions</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>399</td>
+                <td>95</td>
+                <td>55</td>
+                <td>4.9</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="helpBtns">
-          <button class="flex-shrink-0 btn btn-success helpBtn">Customer Support</button>
-          <button class="flex-shrink-0 btn btn-warning helpBtn">Report User</button>
-        </div>
+        <h4 class="infoHeader">My Information</h4>
+        <h6>Professional Photographer looking to buy and sell gear, located in Spain and ready to ship!</h6>
+        <hr>
+        <button class="flex-shrink-0 btn btn-dark profileBtn">Edit Profile</button>
+
+      </div>
     </div>
-    <hr>
+    <div class="col-md-6 buttonsSection">
+      <div class="row userBtns">
+        <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Addresses</button>
+        <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Payments</button>
+        <button class="flex-shrink-0 btn btn-dark profileBtn">Manage Followers/Following</button>
+        <button class="flex-shrink-0 btn btn-dark profileBtn">See Orders</button>
+      </div>
+      <div class="row helpBtns">
+        <button class="flex-shrink-0 btn btn-success helpBtn">Customer Support</button>
+        <button class="flex-shrink-0 btn btn-warning helpBtn">Report User</button>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -9,15 +9,15 @@
           <div class="mb-2">
               <%= form_tag cameras_path, method: :get do %>
                 <div class="form-check">
-                  <%= link_to "Cameras", cameras_path, id: "camera-link", class: "form-check-label", style: "font-weight:bolder;" %>
+                  <%= link_to "Cameras", cameras_path, id: "camera-link", class: "form-check-label", style: "color:black; font-weight:bolder;" %>
                 </div>
 
                 <div class="form-check">
-                  <%= link_to "Accessories", accessories_path, id: "accessory-link", class: "form-check-label" %>
+                  <%= link_to "Accessories", accessories_path, id: "accessory-link", class: "form-check-label link-secondary" %>
                 </div>
 
                 <div class="form-check">
-                  <%= link_to "Lenses", lenses_path, id: "lenses-link", class: "form-check-label" %>
+                  <%= link_to "Lenses", lenses_path, id: "lenses-link", class: "form-check-label link-secondary" %>
                 </div>
               <% end %>
             </div>

@@ -12,6 +12,7 @@ class Camera < ApplicationRecord
   validates :year, numericality: { only_integer: true }
 
   include PgSearch::Model
+
   pg_search_scope :search_by_category_make_model_price_and_condition,
     against: [ :category, :make, :model, :price, :condition ],
     using: {
